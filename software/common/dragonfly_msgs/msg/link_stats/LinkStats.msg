@@ -1,0 +1,2 @@
+u16 ping_ms
+u8 packet_loss_percent

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safety Considerations &mdash; DragonFly  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=86f27845" />
+
+  
+  
+        <script src="../../_static/jquery.js?v=8dae8fb0"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Hardware" href="../../hardware/index.html" />
+    <link rel="prev" title="System Architecture" href="../system_architecture/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            DragonFly
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Project Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../system_architecture/index.html">System Architecture</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Safety Considerations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#system-architecture">System Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#failure-scenarios">Failure scenarios</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#payloads-computer-crash">Payloads Computer Crash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#servos-power-outage">Servos Power Outage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#computing-section-power-outage">Computing Section Power Outage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sensors-section-power-outage">Sensors Section Power Outage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#software">Software</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#critical-section-software">Critical Section Software</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software/index.html">Software</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">DragonFly</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Project Overview</a></li>
+      <li class="breadcrumb-item active">Safety Considerations</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/overview/safety_considerations/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="safety-considerations">
+<h1>Safety Considerations<a class="headerlink" href="#safety-considerations" title="Link to this heading"></a></h1>
+<hr class="docutils" />
+<section id="system-architecture">
+<h2>System Architecture<a class="headerlink" href="#system-architecture" title="Link to this heading"></a></h2>
+<p>The system architecture can be split in three sections :</p>
+<p>The <strong>High-Criticality Section</strong> contains the Flight Controller and the actuators.
+It can handle automatic emergency procedures when the other sections are not available (see <a class="reference internal" href="../../software/flight_controller/control_modes/degraded_control_modes/index.html#degraded-control-modes"><span class="std std-ref">Degraded Control Modes</span></a>)</p>
+<p>The <strong>Medium-Criticality Section</strong> contains the Remote Control and the RF modem.
+It can provide manual control when in RF range, and automatic emergency procedures otherwise (see <a class="reference internal" href="../../software/flight_controller/control_modes/degraded_control_modes/index.html#degraded-control-modes"><span class="std std-ref">Degraded Control Modes</span></a>)</p>
+<p>The <strong>Low-Criticality Section</strong> contains the rest of the system, it allows for nominal operations.</p>
+</section>
+<hr class="docutils" />
+<section id="failure-scenarios">
+<h2>Failure scenarios<a class="headerlink" href="#failure-scenarios" title="Link to this heading"></a></h2>
+<p>Not all failure scenarios combinations are described here, but this section describes the behavior of the system for some “expected” failures, as well as a criticity score :</p>
+<ul class="simple">
+<li><p>🟩 DragonFly can be manually controlled and landed safely</p></li>
+<li><p>🟧 DragonFly can not be manually controlled and will try to wait until the situation improves, or attempt an automatic emergency landing if needed. Its safety and its surrounding’s are not guaranteed.</p></li>
+<li><p>🟥 DragonFly loses control of its actuators, it will crash soon</p></li>
+</ul>
+<p><strong>Summary</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Failure</p></th>
+<th class="head"><p>Criticity</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Servos Power Outage</p></td>
+<td><p>🟥</p></td>
+</tr>
+<tr class="row-odd"><td><p>Computing Compartment Power Outage</p></td>
+<td><p>🟥</p></td>
+</tr>
+<tr class="row-even"><td><p>SensorsCompartment Power Outage</p></td>
+<td><p>🟧</p></td>
+</tr>
+<tr class="row-odd"><td><p>Payloads Computer Crash</p></td>
+<td><p>🟧 / 🟩 depending on distance</p></td>
+</tr>
+</tbody>
+</table>
+<section id="payloads-computer-crash">
+<h3>Payloads Computer Crash<a class="headerlink" href="#payloads-computer-crash" title="Link to this heading"></a></h3>
+<p><strong>Criticity :</strong> 🟩 / 🟧 depending on distance</p>
+<p><strong>Causes :</strong> Firmware / Linux crash, power outage…</p>
+<p><strong>Consequences :</strong></p>
+<ul>
+<li><p>Videostreams are no longer available</p></li>
+<li><p>The Flight Controller loses access to :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Gps Data</p></li>
+<li><p>Altitude Data</p></li>
+<li><p>4G Signal</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>When in RF range, stabilised manual control can be taken and DragonFly can be landed safely.</p>
+<p>When out of RF range, the Flight Controller will go into <a class="reference internal" href="../../software/flight_controller/control_modes/degraded_control_modes/index.html#closed-loop-descent"><span class="std std-ref">CLOSED_LOOP_DESCENT</span></a> mode until</p>
+<ul class="simple">
+<li><p>RF signal is available again</p></li>
+<li><p>The Payloads Computer restarts and 4G signal is available again</p></li>
+<li><p>It hits the ground</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The out of RF range behavior could be vastly improved by giving the Flight Controller direct access to GPS and Altitude data.
+This would allow for a “Return Home” behavior or emergency landing.</p>
+</div>
+</section>
+<section id="servos-power-outage">
+<h3>Servos Power Outage<a class="headerlink" href="#servos-power-outage" title="Link to this heading"></a></h3>
+<p><strong>Criticity :</strong> 🟥</p>
+<p><strong>Causes :</strong> UBEC fault, bad wiring…</p>
+<p><strong>Consequences :</strong> DragonFly has no control over its attitude and most likely crashes very fast.</p>
+</section>
+<section id="computing-section-power-outage">
+<h3>Computing Section Power Outage<a class="headerlink" href="#computing-section-power-outage" title="Link to this heading"></a></h3>
+<p><strong>Criticity :</strong> 🟥</p>
+<p><strong>Causes :</strong> UBEC fault, bad wiring…</p>
+<p><strong>Consequences :</strong> The flight controller dies, so the servos no longer receive commands.
+Dragonfly crashes more or less quicly depending on servos behavior (return to 0 / keep previous position / go numb)</p>
+</section>
+<section id="sensors-section-power-outage">
+<h3>Sensors Section Power Outage<a class="headerlink" href="#sensors-section-power-outage" title="Link to this heading"></a></h3>
+<p><strong>Criticity :</strong> 🟧</p>
+<p><strong>Causes :</strong> UBEC fault, bad wiring…</p>
+<p><strong>Consequences :</strong></p>
+<ul>
+<li><p>The Flight Controller loses access to :</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Gps Data</p></li>
+<li><p>Altitude Data</p></li>
+<li><p>4G and RF signal</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>The Flight Controller goes into <a class="reference internal" href="../../software/flight_controller/control_modes/degraded_control_modes/index.html#closed-loop-descent"><span class="std std-ref">CLOSED_LOOP_DESCENT</span></a> mode until</p>
+<ul class="simple">
+<li><p>Power comes back</p></li>
+<li><p>It hits the ground</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This behavior could be improved by giving the Flight Controller direct access to GPS and Altitude data.
+This would allow for a “Return Home” behavior or emergency landing.</p>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="software">
+<h2>Software<a class="headerlink" href="#software" title="Link to this heading"></a></h2>
+<section id="critical-section-software">
+<h3>Critical Section Software<a class="headerlink" href="#critical-section-software" title="Link to this heading"></a></h3>
+<p>The software that runs in the <strong>High</strong> and <strong>Medium</strong> Criticality Sections (FC and RC) :</p>
+<ul class="simple">
+<li><p>Uses no dynamic allocations</p></li>
+<li><p>Is well unit tested</p></li>
+<li><p>Is monitored by a hardware watchdog</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Antoine Diers.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

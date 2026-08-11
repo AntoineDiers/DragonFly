@@ -1,0 +1,12 @@
+System Architecture Safety Considerations
+-----------------------------------------
+
+The system architecture can be split in three sections : 
+
+The **High-Criticality Section** contains the Flight Controller and the actuators.
+It can handle automatic emergency procedures when the other sections are not available (see :ref:`degraded_control_modes`) 
+
+The **Medium-Criticality Section** contains the Remote Control and the RF modem.
+It can provide manual control when in RF range, and automatic emergency procedures otherwise (see :ref:`degraded_control_modes`) 
+
+The **Low-Criticality Section** contains the rest of the system, it allows for nominal operations.

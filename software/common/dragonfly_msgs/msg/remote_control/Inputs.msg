@@ -1,0 +1,8 @@
+bool is_armed
+bool auto_mode
+f32 roll_stabilization_level_percent
+f32 pitch_stabilization_level_percent
+f32 flaps_angle_deg
+f32 throttle_percent
+f32 left_right
+f32 down_up

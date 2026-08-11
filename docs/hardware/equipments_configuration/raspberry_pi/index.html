@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raspberry Pi configuration &mdash; DragonFly  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=86f27845" />
+
+  
+  
+        <script src="../../../_static/jquery.js?v=8dae8fb0"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="User PC Configuration" href="../user_pc/index.html" />
+    <link rel="prev" title="IMU configuration" href="../imu/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            DragonFly
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Project Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Hardware</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Equipments Configuration</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../imu/index.html">IMU configuration</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Raspberry Pi configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../user_pc/index.html">User PC Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cloud_server/index.html">Cloud Server Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/index.html">Software</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">DragonFly</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Hardware</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Equipments Configuration</a></li>
+      <li class="breadcrumb-item active">Raspberry Pi configuration</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/hardware/equipments_configuration/raspberry_pi/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="raspberry-pi-configuration">
+<h1>Raspberry Pi configuration<a class="headerlink" href="#raspberry-pi-configuration" title="Link to this heading"></a></h1>
+<a class="reference internal image-reference" href="../../../_images/raspberry_pi.jpg"><img alt="../../../_images/raspberry_pi.jpg" src="../../../_images/raspberry_pi.jpg" style="width: 200px;" /></a>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Your dev PC connected to your home wifi network</p></li>
+<li><p>Your Raspberry Pi 5</p></li>
+<li><p>A 500Go external SSD drive</p></li>
+</ul>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
+<section id="setup-the-ssd-drive">
+<h3>Setup the SSD drive<a class="headerlink" href="#setup-the-ssd-drive" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Download <a class="reference external" href="https://www.raspberrypi.com/software/">Raspberry Pi Imager</a></p></li>
+<li><p>Select Raspberry Pi 5 as the Device</p></li>
+<li><p>Select “Other general purpose OS” -&gt; “Ubuntu” -&gt; “Ubuntu Server 24.04.3 LTS (64-bit)” as the OS</p></li>
+<li><p>Select your SSD drive as the storage device</p></li>
+<li><p>Chose <strong>dragonfly</strong> as the hostname</p></li>
+<li><p>Set the username to <strong>dragonfly</strong> and chose a password</p></li>
+<li><p>Keep the default settings for the wifi configuration, your Raspberry Pi will connect to your home wifi network</p></li>
+<li><p>Enable SSH and allow password authentication</p></li>
+<li><p>Click the write button and wait for the process to finish</p></li>
+</ul>
+</section>
+<section id="first-boot">
+<h3>First boot<a class="headerlink" href="#first-boot" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Plug the SSD drive to your Raspberry Pi and power it on</p></li>
+<li><p>Power on the Raspberry Pi</p></li>
+<li><p>Find its IP address on your home router admin interface</p></li>
+<li><p>SSH into your Raspberry Pi from your dev PC</p></li>
+<li><p>Edit <strong>/etc/netplan/50-cloud-init.yaml</strong> to set a static IP address on your home network</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="p">:</span>
+    <span class="n">version</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="n">wifis</span><span class="p">:</span>
+        <span class="n">wlan0</span><span class="p">:</span>
+        <span class="n">optional</span><span class="p">:</span> <span class="n">true</span>
+        <span class="n">dhcp4</span><span class="p">:</span> <span class="n">no</span>
+        <span class="n">addresses</span><span class="p">:</span> <span class="p">[</span><span class="mf">192.168.1.10</span><span class="o">/</span><span class="mi">24</span><span class="p">]</span>
+        <span class="n">gateway4</span><span class="p">:</span> <span class="mf">192.168.1.254</span>
+        <span class="n">nameservers</span><span class="p">:</span>
+            <span class="n">addresses</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.1.1.1</span><span class="p">,</span><span class="mf">8.8.8.8</span><span class="p">]</span>
+        <span class="n">regulatory</span><span class="o">-</span><span class="n">domain</span><span class="p">:</span> <span class="s2">&quot;FR&quot;</span>
+        <span class="n">access</span><span class="o">-</span><span class="n">points</span><span class="p">:</span>
+            <span class="s2">&quot;Freebox-70E8D0&quot;</span><span class="p">:</span>
+            <span class="n">auth</span><span class="p">:</span>
+                <span class="n">key</span><span class="o">-</span><span class="n">management</span><span class="p">:</span> <span class="s2">&quot;psk&quot;</span>
+                <span class="n">password</span><span class="p">:</span> <span class="s2">&quot;12e99350af77b50358b8aeb360c63dbfd037c80635d5a11bd00c903bd72bd447&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Apply the netplan configuration</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">netplan</span> <span class="n">apply</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>SSH into your Raspberry Pi using its new static IP address</p></li>
+</ul>
+</section>
+<section id="setup-hosts">
+<h3>Setup hosts<a class="headerlink" href="#setup-hosts" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Edit the <strong>/etc/hosts</strong> file to add the following line :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dev</span><span class="o">-</span><span class="n">pc</span> <span class="mf">10.0.0.3</span>
+</pre></div>
+</div>
+</section>
+<section id="install-and-setup-docker">
+<h3>Install and setup Docker<a class="headerlink" href="#install-and-setup-docker" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Follow this guide to install Docker on your Raspberry Pi : <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Install Docker Engine on Ubuntu</a></p></li>
+<li><p>To make sure you can use Docker without sudo</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo usermod -aG docker $USER
+newgrp docker
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Créer le fichier /etc/docker/daemon.json et y écrire</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;insecure-registries&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;dev-pc:5000&quot;</span> <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="install-and-setup-openvpn">
+<h3>Install and setup OpenVPN<a class="headerlink" href="#install-and-setup-openvpn" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Install OpenVPN Client</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">openvpn</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Setup autostart</p></li>
+</ul>
+<p>Uncomment the following line from <strong>/etc/default/openvpn</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AUTOSTART</span><span class="o">=</span><span class="s2">&quot;all&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Download your .ovpn file from your OpenVpnAS instance on your Dev PC</p></li>
+<li><p>scp it in your Raspberry Pi under <strong>/etc/openvpn/client.conf</strong></p></li>
+<li><p>Enable and start the OpenVPN service</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">enable</span> <span class="n">openvpn</span><span class="nd">@client</span><span class="o">.</span><span class="n">service</span>
+<span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">start</span> <span class="n">openvpn</span><span class="nd">@client</span><span class="o">.</span><span class="n">service</span>
+</pre></div>
+</div>
+</section>
+<section id="generate-udev-rules">
+<h3>Generate UDEV rules<a class="headerlink" href="#generate-udev-rules" title="Link to this heading"></a></h3>
+<p>When a USB device is plugged, it can be assigned to /dev/ttyUSB0, /dev/ttyUSB1, /dev/ttyUSB2…
+UDEV rules allows you to chose the name of the file to which a device will be assigned, we need this so that our drivers can find their devices.</p>
+<ul class="simple">
+<li><p>Create the following file : <strong>/etc/udev/rules.d/dragonfly.rules</strong></p></li>
+<li><p>Write the following content :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">KERNELS</span><span class="o">==</span><span class="s2">&quot;ttyUSB*&quot;</span><span class="p">,</span> <span class="n">SYMLINK</span><span class="o">+=</span><span class="s2">&quot;imu&quot;</span>
+<span class="n">KERNELS</span><span class="o">==</span><span class="s2">&quot;ttyACM*&quot;</span><span class="p">,</span> <span class="n">SYMLINK</span><span class="o">+=</span><span class="s2">&quot;gps&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Run the following commands to apply the rules :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">udevadm</span> <span class="n">control</span> <span class="o">--</span><span class="n">reload</span><span class="o">-</span><span class="n">rules</span>
+<span class="n">sudo</span> <span class="n">udevadm</span> <span class="n">trigger</span>
+</pre></div>
+</div>
+</section>
+<section id="connect-to-your-4g-dongle">
+<h3>Connect to your 4G dongle<a class="headerlink" href="#connect-to-your-4g-dongle" title="Link to this heading"></a></h3>
+<p>TODO</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Antoine Diers.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+FROM ubuntu:24.04
+
+# Install Gstreamer
+COPY assets/install_gst.sh /tmp/install_gst.sh
+RUN /tmp/install_gst.sh
+ENV GST_PLUGIN_PATH=/usr/lib/gst-plugins/
+
+# Install entrypoint
+COPY assets/entrypoints/webrtc_server_entrypoint.sh /entrypoint.sh

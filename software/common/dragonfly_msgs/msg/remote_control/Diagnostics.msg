@@ -1,0 +1,5 @@
+u32 n_restarts
+
+remote_control/LinksDiagnostics links_diagnostics
+
+remote_control/InputsDiagnostics inputs_diagnostics
