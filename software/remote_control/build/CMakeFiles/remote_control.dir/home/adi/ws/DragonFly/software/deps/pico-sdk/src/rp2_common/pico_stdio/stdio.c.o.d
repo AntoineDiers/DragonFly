@@ -49,5 +49,4 @@ CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/r
  /home/adi/ws/DragonFly/software/deps/pico-sdk/src/common/pico_sync/include/pico/mutex.h \
  /home/adi/ws/DragonFly/software/deps/pico-sdk/src/common/pico_sync/include/pico/lock_core.h \
  /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h \
- /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h \
- /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h
+ /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h

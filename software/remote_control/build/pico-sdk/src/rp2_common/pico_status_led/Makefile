@@ -117,6 +117,20 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+pico-sdk/src/rp2_common/pico_status_led/CMakeFiles/pioasmBuild.dir/rule:
+	cd /home/adi/ws/DragonFly/software/remote_control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/pico_status_led/CMakeFiles/pioasmBuild.dir/rule
+.PHONY : pico-sdk/src/rp2_common/pico_status_led/CMakeFiles/pioasmBuild.dir/rule
+
+# Convenience name for target.
+pioasmBuild: pico-sdk/src/rp2_common/pico_status_led/CMakeFiles/pioasmBuild.dir/rule
+.PHONY : pioasmBuild
+
+# fast build rule for target.
+pioasmBuild/fast:
+	cd /home/adi/ws/DragonFly/software/remote_control/build && $(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/pico_status_led/CMakeFiles/pioasmBuild.dir/build.make pico-sdk/src/rp2_common/pico_status_led/CMakeFiles/pioasmBuild.dir/build
+.PHONY : pioasmBuild/fast
+
+# Convenience name for target.
 pico-sdk/src/rp2_common/pico_status_led/CMakeFiles/pico_status_led_ws2812_pio_h.dir/rule:
 	cd /home/adi/ws/DragonFly/software/remote_control/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sdk/src/rp2_common/pico_status_led/CMakeFiles/pico_status_led_ws2812_pio_h.dir/rule
 .PHONY : pico-sdk/src/rp2_common/pico_status_led/CMakeFiles/pico_status_led_ws2812_pio_h.dir/rule
@@ -139,6 +153,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... pico_status_led_ws2812_pio_h"
+	@echo "... pioasmBuild"
 .PHONY : help
 
 

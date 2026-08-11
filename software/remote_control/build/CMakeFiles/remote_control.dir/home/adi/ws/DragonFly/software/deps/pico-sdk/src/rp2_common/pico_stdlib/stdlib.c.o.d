@@ -60,7 +60,6 @@ CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/r
  /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/uart.h \
  /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/uart.h \
  /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dreq.h \
- /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
  /home/adi/ws/DragonFly/software/deps/pico-sdk/src/common/pico_binary_info/include/pico/binary_info.h \
  /home/adi/ws/DragonFly/software/deps/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/defs.h \
  /home/adi/ws/DragonFly/software/deps/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/structure.h \

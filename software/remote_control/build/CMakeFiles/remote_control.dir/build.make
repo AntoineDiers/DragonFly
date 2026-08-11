@@ -884,360 +884,10 @@ CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/r
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio/stdio.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
 
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_flash/flash.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_flash/flash.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_flash/flash.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_flash/flash.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_flash/flash.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_flash/flash.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_flash/flash.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_flash/flash.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_flash/flash.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_flash/flash.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_flash/flash.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_flash/flash.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_flash/flash.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_flash/flash.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_flash/flash.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_flash/flash.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_flash/flash.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_usb_reset/usb_reset.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_usb_reset/usb_reset.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_usb_reset/usb_reset.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_usb_reset/usb_reset.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_usb_reset/usb_reset.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_usb_reset/usb_reset.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_usb_reset/usb_reset.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_usb_reset/usb_reset.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_usb_reset/usb_reset.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_usb_reset/usb_reset.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_usb_reset/usb_reset.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_usb_reset/usb_reset.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_usb_reset/usb_reset.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_usb_reset/usb_reset.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_usb_reset/usb_reset.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_usb_reset/usb_reset.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_usb_reset/usb_reset.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd_control.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd_control.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd_control.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd_control.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd_control.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd_control.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd_control.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd_control.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd_control.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd_control.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd_control.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/video/video_device.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/video/video_device.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/video/video_device.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/video/video_device.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/video/video_device.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/video/video_device.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/video/video_device.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/video/video_device.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/video/video_device.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/video/video_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/video/video_device.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/video/video_device.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/video/video_device.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/video/video_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/video/video_device.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/video/video_device.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/video/video_device.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/tusb.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/tusb.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/tusb.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/tusb.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/tusb.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/tusb.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/tusb.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/tusb.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/tusb.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/tusb.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/tusb.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/tusb.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/tusb.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/tusb.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/tusb.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/tusb.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/tusb.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o: CMakeFiles/remote_control.dir/flags.make
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c > CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i
-
-CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s
-
 CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_thread_local/thread_local.c.o: CMakeFiles/remote_control.dir/flags.make
 CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_thread_local/thread_local.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_thread_local/thread_local.c
 CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_thread_local/thread_local.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_thread_local/thread_local.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_thread_local/thread_local.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_thread_local/thread_local.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_thread_local/thread_local.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_thread_local/thread_local.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_thread_local/thread_local.c
 
 CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_thread_local/thread_local.c.i: cmake_force
@@ -1251,7 +901,7 @@ CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/r
 CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_adc/adc.c.o: CMakeFiles/remote_control.dir/flags.make
 CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_adc/adc.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_adc/adc.c
 CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_adc/adc.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_adc/adc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_adc/adc.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_adc/adc.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_adc/adc.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_adc/adc.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_adc/adc.c
 
 CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_adc/adc.c.i: cmake_force
@@ -1265,7 +915,7 @@ CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/r
 CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.o: CMakeFiles/remote_control.dir/flags.make
 CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.o: /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_i2c/i2c.c
 CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.o: CMakeFiles/remote_control.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.o"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.o -MF CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.o.d -o CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.o -c /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_i2c/i2c.c
 
 CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.i: cmake_force
@@ -1337,31 +987,6 @@ remote_control_OBJECTS = \
 "CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o" \
 "CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_clib_interface/cxa_guard.c.o" \
 "CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_flash/flash.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_usb_reset/usb_reset.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd_control.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/video/video_device.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/tusb.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o" \
-"CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o" \
 "CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_thread_local/thread_local.c.o" \
 "CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_adc/adc.c.o" \
 "CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.o"
@@ -1428,31 +1053,6 @@ remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software
 remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
 remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_clib_interface/cxa_guard.c.o
 remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_xip_cache/xip_cache.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_usb_reset/usb_reset.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/device/usbd_control.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/class/video/video_device.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/tusb.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.o
-remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.o
 remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_thread_local/thread_local.c.o
 remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_adc/adc.c.o
 remote_control.elf: CMakeFiles/remote_control.dir/home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.o
@@ -1504,7 +1104,7 @@ remote_control.elf: /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common
 remote_control.elf: /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_standard_link/script_include/sections_stack.incl
 remote_control.elf: /home/adi/ws/DragonFly/software/deps/pico-sdk/src/rp2_common/pico_standard_link/script_include/set_memory_locations.incl
 remote_control.elf: CMakeFiles/remote_control.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Linking CXX executable remote_control.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/adi/ws/DragonFly/software/remote_control/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Linking CXX executable remote_control.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/remote_control.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/arm-none-eabi-objdump -h /home/adi/ws/DragonFly/software/remote_control/build/remote_control.elf > remote_control.dis
 	/usr/bin/arm-none-eabi-objdump -d /home/adi/ws/DragonFly/software/remote_control/build/remote_control.elf >> remote_control.dis
