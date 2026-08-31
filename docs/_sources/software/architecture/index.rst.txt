@@ -1,9 +1,0 @@
-Software architecture
-========================
-
-.. toctree::
-    :maxdepth: 2
-
-    positionning/index
-
-.. image:: architecture.png

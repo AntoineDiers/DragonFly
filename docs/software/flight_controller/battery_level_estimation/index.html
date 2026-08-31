@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Battery Level Estimation &mdash; DragonFly  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=86f27845" />
+
+  
+  
+        <script src="../../../_static/jquery.js?v=8dae8fb0"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Control Modes" href="../control_modes/index.html" />
+    <link rel="prev" title="Flight Controller" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            DragonFly
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Software</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../build_process/index.html">Build process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../documentation/index.html">Sphinx documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../communication/index.html">Communication</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Flight Controller</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Battery Level Estimation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#battery-model">Battery Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kalman-filter">Kalman Filter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../control_modes/index.html">Control Modes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../remote_control/index.html">Remote Control</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">DragonFly</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Software</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Flight Controller</a></li>
+      <li class="breadcrumb-item active">Battery Level Estimation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/software/flight_controller/battery_level_estimation/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="battery-level-estimation">
+<h1>Battery Level Estimation<a class="headerlink" href="#battery-level-estimation" title="Link to this heading"></a></h1>
+<p>The battery level is estimated by feeding the voltage and current through a Kalman Filter based on the Thevenin 1RC Model.</p>
+<section id="battery-model">
+<h2>Battery Model<a class="headerlink" href="#battery-model" title="Link to this heading"></a></h2>
+<p>The battery model is the Thevenin 1RC Model :</p>
+<div class="math notranslate nohighlight">
+\[V(t) = V_{oc}(t) - I(t)R_{int} - V_{pol}(t)\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{dV_{pol}}{dt} = \frac{I(t)}{C_{pol}} - \frac{V_{pol}}{R_{pol}C_{pol}}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(V(t)\)</span> : The measured voltage of the battery</p></li>
+<li><p><span class="math notranslate nohighlight">\(I(t)\)</span> : The measured current out of the battery</p></li>
+<li><p><span class="math notranslate nohighlight">\(V_{oc}(t)\)</span> : Open Circuit Voltage, the voltage that the battery would have if disconnected, this is what we are trying to estimate</p></li>
+<li><p><span class="math notranslate nohighlight">\(R_{int}\)</span> : The internal resistance of the battery</p></li>
+<li><p><span class="math notranslate nohighlight">\(V_{pol}(t)\)</span> : The polarisation voltage</p></li>
+<li><p><span class="math notranslate nohighlight">\(R_{pol}\)</span> : The polarisation resistance</p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{pol}\)</span> : The polarisation capacitance</p></li>
+</ul>
+</section>
+<section id="kalman-filter">
+<h2>Kalman Filter<a class="headerlink" href="#kalman-filter" title="Link to this heading"></a></h2>
+<p>The kalman filter is based on the <a class="reference external" href="https://en.wikipedia.org/wiki/Kalman_filter">wikipedia description</a> and is configured as follows :</p>
+<p><strong>State (x)</strong> : <span class="math notranslate nohighlight">\(\begin{bmatrix} V_{oc}(t) \\ V_{pol}(t) \end{bmatrix}\)</span></p>
+<p><strong>Command (u)</strong> : <span class="math notranslate nohighlight">\(\begin{bmatrix} I(t) \end{bmatrix}\)</span></p>
+<p><strong>Measure (z)</strong> : <span class="math notranslate nohighlight">\(\begin{bmatrix} V(t) + I(t)R_{int}  \end{bmatrix}\)</span></p>
+<section id="kalman-matrices">
+<h3>Kalman Matrices<a class="headerlink" href="#kalman-matrices" title="Link to this heading"></a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}F = \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 - \frac{dt}{R_{pol}C_{pol}} \end{bmatrix}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}B = \begin{bmatrix} -dt*\frac{dV_{OC}}{dQ} \\ \frac{dt}{C_{pol}} \end{bmatrix}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}Q = \begin{bmatrix} dt^2 \sigma_{I}^2 \frac{dV_{OC}}{dQ}^2 + \sigma_{V_{oc}}^2 &amp; - \frac{dt^2}{C_{pol}} \sigma_{I}^2 \frac{dV_{OC}}{dQ} \\
+- \frac{dt^2}{C_{pol}} \sigma_{I}^2 \frac{dV_{OC}}{dQ} &amp; \frac{dt^2\sigma_{I}^2}{C_{pol}^2} + \sigma_{V_{pol}}^2 \end{bmatrix}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[H = \begin{bmatrix} 1 &amp; -1\end{bmatrix}\]</div>
+<div class="math notranslate nohighlight">
+\[R = \begin{bmatrix} \sigma_{V}^2 + R_{int}^2 \sigma_{I}^2 \end{bmatrix}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="math notranslate nohighlight">\(\frac{dV_{OC}}{dQ}\)</span> corresponds to the small voltage drop caused by a small capacity usage of the battery when the open circuit voltage is <span class="math notranslate nohighlight">\(V_{OC}\)</span>, this is calculated using Voltage-Charge lookup tables</p>
+</div>
+</section>
+<section id="kalman-settings">
+<h3>Kalman Settings<a class="headerlink" href="#kalman-settings" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R_{int}\)</span> : The internal resistance of the battery</p></li>
+<li><p><span class="math notranslate nohighlight">\(R_{pol}\)</span> : The polarisation resistance</p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{pol}\)</span> : The polarisation capacitance</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\sigma_{V}\)</span> : The voltage measure standard deviation</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_{I}\)</span> : The current measure standard deviation</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_{V_{oc}}\)</span> : The standard deviation of the <span class="math notranslate nohighlight">\(V_{oc}\)</span> process noise</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_{V_{pol}}\)</span> : The standard deviation of the <span class="math notranslate nohighlight">\(V_{pol}\)</span> process noise</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_{0V_{oc}}\)</span> : The initial standard deviation of the <span class="math notranslate nohighlight">\(V_{oc}\)</span> estimation</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma_{0V_{pol}}\)</span> : The initial standard deviation of the <span class="math notranslate nohighlight">\(V_{pol}\)</span> estimation</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(CV_{LUT}\)</span> : The charge / voltage lookup table of the battery (used to compute <span class="math notranslate nohighlight">\(\frac{dV_{OC}}{dQ}\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{max}\)</span> : The capacity of the battery (used to compute <span class="math notranslate nohighlight">\(\frac{dV_{OC}}{dQ}\)</span>)</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Antoine Diers.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

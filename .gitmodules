@@ -1,3 +1,6 @@
 [submodule "software/deps/pico-sdk"]
 	path = software/deps/pico-sdk
 	url = git@github.com:raspberrypi/pico-sdk.git
+[submodule "software/deps/googletest"]
+	path = software/deps/googletest
+	url = https://github.com/google/googletest.git

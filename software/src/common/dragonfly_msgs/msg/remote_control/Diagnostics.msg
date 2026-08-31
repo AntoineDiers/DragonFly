@@ -1,0 +1,2 @@
+link_stats/ConnectionsStatus connections_status
+remote_control/InputsDiagnostics inputs_diagnostics

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="theme-green">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>GCC Code Coverage Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="coverage.css"/>
+  </head>
+
+  <body>
+    <header>
+      <h1>GCC Code Coverage Report</h1>
+
+      <hr/>
+
+      <div class="summary">
+<div>
+  <table class="legend">
+    <tr>
+      <th scope="row">Directory:</th>
+      <td>src/</td>
+    </tr>
+    <tr>
+      <th scope="row">Date:</th>
+      <td>2026-08-31 11:17:01</td>
+    </tr>
+  </table>
+</div>
+
+<div>
+  <table class="coverage">
+    <tr>
+      <th></th>
+      <th scope="col">Exec</th>
+      <th scope="col">Total</th>
+      <th scope="col">Coverage</th>
+    </tr>
+    <tr>
+      <th scope="row">Lines:</th>
+      <td>189</td>
+      <td>319</td>
+      <td class="coverage-low">59.2%</td>
+    </tr>
+    <tr>
+      <th scope="row">Functions:</th>
+      <td>29</td>
+      <td>43</td>
+      <td class="coverage-low">67.4%</td>
+    </tr>
+    <tr>
+      <th scope="row">Branches:</th>
+      <td>103</td>
+      <td>223</td>
+      <td class="coverage-low">46.2%</td>
+    </tr>
+  </table>
+</div>
+      </div>
+
+      <hr/>
+    </header>
+
+    <nav>
+    </nav>
+
+    <main>
+<table class="listOfFunctions">
+  <tr>
+    <th>Function (File:Line)</th>
+    <th>Call count</th>
+    <th>Block coverage</th>
+  </tr>
+  <tr><td><a href="coverage.Ads1115Driver.h.b2c6b1b1f60fc934267a8e3af5d860f7.html#l62">Ads1115Driver::Ads1115Driver(ClockInterface*, IoInterface*, Ads1115Driver::Config const&amp;) (src/common/ads1115_driver/include/ads1115_driver/Ads1115Driver.h:62)</a></td><td>called 1 time, returned 1 time</td><td>68.0%</td></tr>
+  <tr><td><a href="coverage.Ads1115Driver.h.b2c6b1b1f60fc934267a8e3af5d860f7.html#l159">Ads1115Driver::read(unsigned char*, unsigned int) (src/common/ads1115_driver/include/ads1115_driver/Ads1115Driver.h:159)</a></td><td>called 1089 times, returned 1089 times</td><td>89.0%</td></tr>
+  <tr><td><a href="coverage.Ads1115Driver.h.b2c6b1b1f60fc934267a8e3af5d860f7.html#l135">Ads1115Driver::spsToMs(Ads1115Driver::SPS const&amp;) (src/common/ads1115_driver/include/ads1115_driver/Ads1115Driver.h:135)</a></td><td>called 1980 times, returned 1980 times</td><td>27.0%</td></tr>
+  <tr><td><a href="coverage.Ads1115Driver.h.b2c6b1b1f60fc934267a8e3af5d860f7.html#l165">Ads1115Driver::startReading(Ads1115Driver::PendingReadingInfo const&amp;) (src/common/ads1115_driver/include/ads1115_driver/Ads1115Driver.h:165)</a></td><td>called 99 times, returned 99 times</td><td>100.0%</td></tr>
+  <tr><td><a href="coverage.Ads1115Driver.h.b2c6b1b1f60fc934267a8e3af5d860f7.html#l73">Ads1115Driver::tick() (src/common/ads1115_driver/include/ads1115_driver/Ads1115Driver.h:73)</a></td><td>called 1000 times, returned 1000 times</td><td>74.0%</td></tr>
+  <tr><td><a href="coverage.Ads1115Driver.h.b2c6b1b1f60fc934267a8e3af5d860f7.html#l153">Ads1115Driver::write(unsigned char const*, unsigned int) (src/common/ads1115_driver/include/ads1115_driver/Ads1115Driver.h:153)</a></td><td>called 1188 times, returned 1188 times</td><td>89.0%</td></tr>
+  <tr><td><a href="coverage.ClockMock.h.4fa919767d0ec8b178ae516aa3a486ad.html#l19">ClockMock::advance_ms(unsigned int) (src/common/rpi_pico_utils/include/rpi_pico_utils/clock/ClockMock.h:19)</a></td><td>called 31000 times, returned 31000 times</td><td>100.0%</td></tr>
+  <tr><td><a href="coverage.ClockMock.h.4fa919767d0ec8b178ae516aa3a486ad.html#l9">ClockMock::getTime_us() const (src/common/rpi_pico_utils/include/rpi_pico_utils/clock/ClockMock.h:9)</a></td><td>called 105500 times, returned 105500 times</td><td>100.0%</td></tr>
+  <tr><td><a href="coverage.ImuDriver.h.eada602427d1f3fd67ffbe0da824db3b.html#l29">ImuDriver::ImuDriver(ImuDriver::Config const&amp;, Periodic&lt;FlightControllerInputs::Attitude&gt;*, ClockInterface*, IoInterface*, InputGpioInterface*, OutputGpioInterface*) (src/flight_controller/src/imu_driver/ImuDriver.h:29)</a></td><td>called 2 times, returned 2 times</td><td>100.0%</td></tr>
+  <tr><td><a href="coverage.ImuDriver.h.eada602427d1f3fd67ffbe0da824db3b.html#l181">ImuDriver::parseGameRotationVector(unsigned char*) (src/flight_controller/src/imu_driver/ImuDriver.h:181)</a></td><td>called 2687 times, returned 2687 times</td><td>57.0%</td></tr>
+  <tr><td><a href="coverage.ImuDriver.h.eada602427d1f3fd67ffbe0da824db3b.html#l171">ImuDriver::parseShtpHeader(unsigned char*) (src/flight_controller/src/imu_driver/ImuDriver.h:171)</a></td><td>called 2815 times, returned 2815 times</td><td>100.0%</td></tr>
+  <tr><td><a href="coverage.ImuDriver.h.eada602427d1f3fd67ffbe0da824db3b.html#l54">ImuDriver::poll() (src/flight_controller/src/imu_driver/ImuDriver.h:54)</a></td><td>called 30000 times, returned 30000 times</td><td>93.0%</td></tr>
+  <tr><td><a href="coverage.ImuDriver.h.eada602427d1f3fd67ffbe0da824db3b.html#l132">ImuDriver::resetImu() (src/flight_controller/src/imu_driver/ImuDriver.h:132)</a></td><td>called 3 times, returned 3 times</td><td>100.0%</td></tr>
+  <tr><td><a href="coverage.ImuDriver.h.eada602427d1f3fd67ffbe0da824db3b.html#l139">ImuDriver::sendInitCommand() (src/flight_controller/src/imu_driver/ImuDriver.h:139)</a></td><td>called 3 times, returned 3 times</td><td>89.0%</td></tr>
+  <tr><td><a href="coverage.InputGpioMock.h.0e5fa2ea85abc0586b0f18fbbd17177f.html#l11">InputGpioMock::InputGpioMock() (src/common/rpi_pico_utils/include/rpi_pico_utils/gpio/InputGpioMock.h:11)</a></td><td>called 2 times, returned 2 times</td><td>100.0%</td></tr>
+  <tr><td><a href="coverage.InputGpioMock.h.0e5fa2ea85abc0586b0f18fbbd17177f.html#l18">InputGpioMock::read() (src/common/rpi_pico_utils/include/rpi_pico_utils/gpio/InputGpioMock.h:18)</a></td><td>called 38335 times, returned 38335 times</td><td>100.0%</td></tr>
+  <tr><td><a href="coverage.InputGpioMock.h.0e5fa2ea85abc0586b0f18fbbd17177f.html#l13">InputGpioMock::setState(bool) (src/common/rpi_pico_utils/include/rpi_pico_utils/gpio/InputGpioMock.h:13)</a></td><td>called 11399 times, returned 11399 times</td><td>100.0%</td></tr>
+  <tr><td><a href="coverage.OutputGpioMock.h.0b074146fb8111140678db198b713dd2.html#l11">OutputGpioMock::OutputGpioMock() (src/common/rpi_pico_utils/include/rpi_pico_utils/gpio/OutputGpioMock.h:11)</a></td><td>called 2 times, returned 2 times</td><td>100.0%</td></tr>
+  <tr><td><a href="coverage.OutputGpioMock.h.0b074146fb8111140678db198b713dd2.html#l13">OutputGpioMock::getState() (src/common/rpi_pico_utils/include/rpi_pico_utils/gpio/OutputGpioMock.h:13)</a></td><td>called 30000 times, returned 30000 times</td><td>100.0%</td></tr>
+  <tr><td><a href="coverage.OutputGpioMock.h.0b074146fb8111140678db198b713dd2.html#l15">OutputGpioMock::set(bool) (src/common/rpi_pico_utils/include/rpi_pico_utils/gpio/OutputGpioMock.h:15)</a></td><td>called 6 times, returned 6 times</td><td>100.0%</td></tr>
+  <tr><td><a href="coverage.Periodic.h.8b187baa4d892d963c2c27b594940b6f.html#l51">Periodic&lt;FlightControllerInputs::Attitude&gt;::Periodic(PeriodicDataConfig const&amp;, ClockInterface*) (src/common/rpi_pico_utils/include/rpi_pico_utils/utils/Periodic.h:51)</a></td><td>called 2 times, returned 2 times</td><td>100.0%</td></tr>
+  <tr><td><a href="coverage.Periodic.h.8b187baa4d892d963c2c27b594940b6f.html#l68">Periodic&lt;FlightControllerInputs::Attitude&gt;::getLastValue(std::optional&lt;unsigned int&gt; const&amp;) const (src/common/rpi_pico_utils/include/rpi_pico_utils/utils/Periodic.h:68)</a></td><td>called 6 times, returned 6 times</td><td>50.0%</td></tr>
+  <tr><td><a href="coverage.Periodic.h.8b187baa4d892d963c2c27b594940b6f.html#l75">Periodic&lt;FlightControllerInputs::Attitude&gt;::getState() (src/common/rpi_pico_utils/include/rpi_pico_utils/utils/Periodic.h:75)</a></td><td>called 4 times, returned 4 times</td><td>79.0%</td></tr>
+  <tr><td><a href="coverage.Periodic.h.8b187baa4d892d963c2c27b594940b6f.html#l55">Periodic&lt;FlightControllerInputs::Attitude&gt;::update(FlightControllerInputs::Attitude const&amp;) (src/common/rpi_pico_utils/include/rpi_pico_utils/utils/Periodic.h:55)</a></td><td>called 2687 times, returned 2687 times</td><td>100.0%</td></tr>
+  <tr><td><a href="coverage.Periodic.h.8b187baa4d892d963c2c27b594940b6f.html#l51">Periodic&lt;float&gt;::Periodic(PeriodicDataConfig const&amp;, ClockInterface*) (src/common/rpi_pico_utils/include/rpi_pico_utils/utils/Periodic.h:51)</a></td><td>called 1 time, returned 1 time</td><td>100.0%</td></tr>
+  <tr><td><a href="coverage.Periodic.h.8b187baa4d892d963c2c27b594940b6f.html#l75">Periodic&lt;float&gt;::getState() (src/common/rpi_pico_utils/include/rpi_pico_utils/utils/Periodic.h:75)</a></td><td>called 1 time, returned 1 time</td><td>61.0%</td></tr>
+  <tr><td><a href="coverage.Periodic.h.8b187baa4d892d963c2c27b594940b6f.html#l55">Periodic&lt;float&gt;::update(float const&amp;) (src/common/rpi_pico_utils/include/rpi_pico_utils/utils/Periodic.h:55)</a></td><td>called 99 times, returned 99 times</td><td>100.0%</td></tr>
+  <tr><td><a href="coverage.Pids.h.32c29c4503d4319e565d425fba32ccc1.html#l18">Pid::tick(float, float) (src/flight_controller/src/control_loop/Pids.h:18)</a></td><td>not called</td><td>0.0%</td></tr>
+  <tr><td><a href="coverage.Stamped.h.4f599fe35cef4f91db05e02d15fcb874.html#l11">Stamped&lt;Pid::LastTickInfo&gt;::getElapsed_us(unsigned long) (src/common/rpi_pico_utils/include/rpi_pico_utils/utils/Stamped.h:11)</a></td><td>not called</td><td>0.0%</td></tr>
+  <tr><td><a href="coverage.Timer.h.d25b3f5b669ae8d26ce9e13c5f8964e5.html#l9">Timer::Timer(ClockInterface*, unsigned int) (src/common/rpi_pico_utils/include/rpi_pico_utils/timer/Timer.h:9)</a></td><td>called 7 times, returned 7 times</td><td>100.0%</td></tr>
+  <tr><td><a href="coverage.Timer.h.d25b3f5b669ae8d26ce9e13c5f8964e5.html#l15">Timer::poll() (src/common/rpi_pico_utils/include/rpi_pico_utils/timer/Timer.h:15)</a></td><td>called 35619 times, returned 35619 times</td><td>100.0%</td></tr>
+  <tr><td><a href="coverage.Utils.h.c251efd97caedfd9feb39f11625e60f7.html#l10">centeredRcInputToFloat(unsigned char) (src/flight_controller/src/control_loop/Utils.h:10)</a></td><td>not called</td><td>0.0%</td></tr>
+  <tr><td><a href="coverage.Idle.cpp.4815e8a476da677f6ea2f9457fde7294.html#l3">control_modes::idle::tick() (src/flight_controller/src/control_loop/control_modes/Idle.cpp:3)</a></td><td>not called</td><td>0.0%</td></tr>
+  <tr><td><a href="coverage.Manual.cpp.7c6479ac244729582ed8c7e2bb6bf38b.html#l10">control_modes::manual::tick(dragonfly_msgs::msg::remote_control::Inputs const&amp;, FlightControllerInputs::Attitude const&amp;, Pids&amp;) (src/flight_controller/src/control_loop/control_modes/Manual.cpp:10)</a></td><td>not called</td><td>0.0%</td></tr>
+  <tr><td><a href="coverage.ClosedLoopDescent.cpp.1dd60e2ebbbd39c1215ef31ab6ad7fb3.html#l6">fallback_modes::closed_loop_descent::tick(FlightControllerInputs::Attitude const&amp;, Pids&amp;) (src/flight_controller/src/control_loop/fallback_modes/ClosedLoopDescent.cpp:6)</a></td><td>not called</td><td>0.0%</td></tr>
+  <tr><td><a href="coverage.ClosedLoopLanding.cpp.44d5af45eb5060dce2abea6f9eb293cf.html#l7">fallback_modes::closed_loop_landing::tick(FlightControllerInputs::Attitude const&amp;, float const&amp;, Pids&amp;) (src/flight_controller/src/control_loop/fallback_modes/ClosedLoopLanding.cpp:7)</a></td><td>not called</td><td>0.0%</td></tr>
+  <tr><td><a href="coverage.ClosedLoopManual.cpp.d7b22f9debb5bdfeb5bce91844d87779.html#l4">fallback_modes::closed_loop_manual::tick(dragonfly_msgs::msg::remote_control::Inputs const&amp;, FlightControllerInputs::Attitude const&amp;, Pids&amp;) (src/flight_controller/src/control_loop/fallback_modes/ClosedLoopManual.cpp:4)</a></td><td>not called</td><td>0.0%</td></tr>
+  <tr><td><a href="coverage.ClosedLoopOrbit.cpp.19f1c3a382aa0d4790f7f0c905c0e42d.html#l6">fallback_modes::closed_loop_orbit::tick(FlightControllerInputs::Attitude const&amp;, float const&amp;, Pids&amp;) (src/flight_controller/src/control_loop/fallback_modes/ClosedLoopOrbit.cpp:6)</a></td><td>not called</td><td>0.0%</td></tr>
+  <tr><td><a href="coverage.OpenLoopDescent.cpp.a579a4391cfa48aa08f5d690a7dbfaa9.html#l6">fallback_modes::open_loop_descent::tick() (src/flight_controller/src/control_loop/fallback_modes/OpenLoopDescent.cpp:6)</a></td><td>not called</td><td>0.0%</td></tr>
+  <tr><td><a href="coverage.OpenLoopGlide.cpp.1c1ca65217b5baf0724bf40d86384919.html#l6">fallback_modes::open_loop_glide::tick() (src/flight_controller/src/control_loop/fallback_modes/OpenLoopGlide.cpp:6)</a></td><td>not called</td><td>0.0%</td></tr>
+  <tr><td><a href="coverage.OpenLoopLanding.cpp.9c54af76c0e656b6b2f09b0cbec131b4.html#l7">fallback_modes::open_loop_landing::tick(float const&amp;) (src/flight_controller/src/control_loop/fallback_modes/OpenLoopLanding.cpp:7)</a></td><td>not called</td><td>0.0%</td></tr>
+  <tr><td><a href="coverage.OpenLoopManual.cpp.4eab93220427f3a75b24358b73248e35.html#l8">fallback_modes::open_loop_manual::tick(dragonfly_msgs::msg::remote_control::Inputs const&amp;) (src/flight_controller/src/control_loop/fallback_modes/OpenLoopManual.cpp:8)</a></td><td>not called</td><td>0.0%</td></tr>
+  <tr><td><a href="coverage.Utils.h.c251efd97caedfd9feb39f11625e60f7.html#l5">rcInputToFloat(unsigned char) (src/flight_controller/src/control_loop/Utils.h:5)</a></td><td>not called</td><td>0.0%</td></tr>
+</table>
+
+      <hr/>
+    </main>
+
+    <footer>
+      Generated by: <a href="http://gcovr.com/en/7.0">GCOVR (Version 7.0)</a>
+    </footer>
+  </body>
+</html>
