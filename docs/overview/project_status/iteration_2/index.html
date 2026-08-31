@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DragonFly Mk2 &mdash; DragonFly  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=86f27845" />
+
+  
+  
+        <script src="../../../_static/jquery.js?v=8dae8fb0"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="System Architecture" href="../../system_architecture/index.html" />
+    <link rel="prev" title="DragonFly Mk1" href="../iteration_1/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            DragonFly
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Project Overview</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Project Status</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#previous-iterations">Previous Iterations</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../iteration_1/index.html">DragonFly Mk1</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">DragonFly Mk2</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#current-iteration">Current Iteration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../system_architecture/index.html">System Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../safety_considerations/index.html">Safety Considerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#key-features">Key Features</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/index.html">Software</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">DragonFly</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Project Overview</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Project Status</a></li>
+      <li class="breadcrumb-item active">DragonFly Mk2</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/overview/project_status/iteration_2/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dragonfly-mk2">
+<h1>DragonFly Mk2<a class="headerlink" href="#dragonfly-mk2" title="Link to this heading"></a></h1>
+<a class="reference internal image-reference" href="../../../_images/dragonfly_mk2.png"><img alt="../../../_images/dragonfly_mk2.png" src="../../../_images/dragonfly_mk2.png" style="height: 150px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/remote_control.png"><img alt="../../../_images/remote_control.png" src="../../../_images/remote_control.png" style="height: 150px;" /></a>
+<section id="goals">
+<h2>Goals<a class="headerlink" href="#goals" title="Link to this heading"></a></h2>
+<p>Create the first flight-worthy DragonFly iteration. Autonomous behaviour is still out of scope, but this iteration should be capable of manual flight.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Mechanical design :</dt><dd><ul>
+<li><p>Switch to OnShape for CAD</p></li>
+<li><p>Strengthen the design by using both carbon fiber and PETG</p></li>
+<li><p>Run the spars through the fuselage instead of having separate spars for each wing, and compensate the lack of dihedral angle by adding curvature to the wing tips</p></li>
+<li><p>Improve aerodynamics and run aerodynamics simulations to check lift and drag are within the expected margins.</p></li>
+<li><p>No longer use heat-shrink covering, use full 3D printed parts instead, it is much easier and not much heavier.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Electronics design :</dt><dd><ul>
+<li><p>Create a more densely packed design, while keeping it easy to work with and disassemble</p></li>
+<li><p>Add a backup IMU</p></li>
+<li><p>Add a long-range RF Modem to add communication redundancy</p></li>
+<li><p>Add a raspberry Pico as the flight controller, keep the Raspberry Pi 5 as a Payload Computer (it is still needed for 4G and videostreaming)</p></li>
+<li><p>Separate the 5V equipments into 3 buses : electronics, modems (RF, 4G), and servos to avoid noise on the bus</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Software :</dt><dd><ul>
+<li><p>Stop using ROS and get familiar with bare-metal dev</p></li>
+<li><p>Unit test the Flight Controller and Remote Control code as much as possible</p></li>
+<li><p>Do not use dynamic allocations in the Flight Controller and the Remote Control</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Remote Control :</dt><dd><ul>
+<li><p>Design my own remote control, it must be usable without being connected to the ground computer (powered via a battery, communicates via RF)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="outcome">
+<h2>Outcome<a class="headerlink" href="#outcome" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../../../_images/dragonfly_mk2_real_2.jpg"><img alt="../../../_images/dragonfly_mk2_real_2.jpg" src="../../../_images/dragonfly_mk2_real_2.jpg" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/dragonfly_mk2_real_1.jpg"><img alt="../../../_images/dragonfly_mk2_real_1.jpg" src="../../../_images/dragonfly_mk2_real_1.jpg" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/remote_control.jpg"><img alt="../../../_images/remote_control.jpg" src="../../../_images/remote_control.jpg" style="width: 600px;" /></a>
+<p>I probably could have gone through with this iteration, but I had this idea in the back of my mind that i should design a PCB to fit all the electronics.
+One day, the urge to learn something new got to me and I started designing the said PCB. I quickly realised what an improvement it would be in terms of safety and compactness. It would allow me to reduce the wingspan from 3m to 2m.
+I also had ideas of sensors that i would like to add but that did not fit the current design and would easily fit on a PCB.</p>
+<p>So i decided to go for a third (and hopefully last) iteration.</p>
+<p><strong>What I learned</strong></p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Mechanical design :</dt><dd><ul>
+<li><p>Onshape is great ! Fast and intuitive.</p></li>
+<li><p>I built the whole fuselage and encountered no issue. Most of the design seems good and can be reused for the next iteration</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Electronics design :</dt><dd><ul>
+<li><p>I planned to use a smart power switch to turn the power on and off. This switch turned out to be very unreliable and it almost blew up my ESC by turning on and off repeatedly for no reason, so i decided to simply disconnect the battery instead of having a switch</p></li>
+<li><p>The electronics were functional (though i did not have the opportunity to test them under full motor and servos load)</p></li>
+<li><p>Designing a simple PCB is not that hard</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Software :</dt><dd><ul>
+<li><p>The Raspberry Pico is great ! It is easy to flash and the sdk is easy to use and well documented</p></li>
+<li><p>The RF bandwidth is smaller than expected, I had to redesign my communication protocol</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Remote Control :</dt><dd><ul>
+<li><p>Everything went well, the remote control is functional and i can keep it as is (Unless the urge to create a PCB for it gets to me)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Antoine Diers.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

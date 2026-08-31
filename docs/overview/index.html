@@ -18,7 +18,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="System Architecture" href="system_architecture/index.html" />
+    <link rel="next" title="Project Status" href="project_status/index.html" />
     <link rel="prev" title="DragonFly" href="../index.html" /> 
 </head>
 
@@ -43,8 +43,13 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Project Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="project_status/index.html">Project Status</a></li>
 <li class="toctree-l2"><a class="reference internal" href="system_architecture/index.html">System Architecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="safety_considerations/index.html">Safety Considerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#key-features">Key Features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#technology-stack">Technology Stack</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
@@ -77,13 +82,99 @@
              
   <section id="project-overview">
 <h1>Project Overview<a class="headerlink" href="#project-overview" title="Link to this heading"></a></h1>
-<p>DragonFly is an autonomous RC Plane designed for stability and efficiency, it can be manually operated using a Remote Control, or autonomously complete missions given via an HMI.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This project is still ongoing, and this page does not depict its current state. See the <a class="reference internal" href="project_status/index.html"><span class="doc">Project Status</span></a> page</p>
+</div>
+<p>DragonFly is an autonomous RC Plane designed for stability and efficiency. It can be manually operated using a Remote Control, or autonomously execute missions defined through an HMI.</p>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="project_status/index.html">Project Status</a></li>
 <li class="toctree-l1"><a class="reference internal" href="system_architecture/index.html">System Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="safety_considerations/index.html">Safety Considerations</a></li>
 </ul>
 </div>
+<section id="key-features">
+<h2>Key Features<a class="headerlink" href="#key-features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Long Range</dt><dd><ul>
+<li><p>Tens of kilometers range via RF depending on line of sight</p></li>
+<li><p>Basically infinite range via 4G</p></li>
+<li><p>Endurance: about 1 hour</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Autonomy</dt><dd><ul>
+<li><p>Waypoint navigation</p></li>
+<li><p>Autonomous takeoff and landing</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Open source</dt><dd><ul>
+<li><p>Everything (code, 3D models…) is available, and you are free to do whatever you want with it (please just don’t turn it into a weapon)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="../_images/dragonfly_4.png" src="../_images/dragonfly_4.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Building your own DragonFly is not a turnkey project, I made it as easy as possible to replicate, but you will still need the following :</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Basic skills in</dt><dd><ul>
+<li><p>Linux</p></li>
+<li><p>3D Printing</p></li>
+<li><p>Electronics (safety, soldering…)</p></li>
+<li><p>DIY</p></li>
+<li><p>Troubleshooting</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Workshop equipment</dt><dd><ul>
+<li><p>A 3D printer that can print PETG</p></li>
+<li><p>A soldering iron</p></li>
+<li><p>Respiratory protection for carbon fiber dust</p></li>
+<li><p>Basic workshop equipment (saws, pliers, screwdrivers…)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Budget</dt><dd><ul>
+<li><p>I estimate the total development cost to be around 2000€ (including the 700€ 3D Printer, but not including labor of course). You might be able to recreate it for less than 1000€ if you choose a cheaper 3D printer and buy less useless stuff than me</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Time</dt><dd><ul>
+<li><p>I estimate the total build time to be between one and a few months, assuming you can work on it every weekend and have a 3D printer running 24/7.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<section id="technology-stack">
+<h3>Technology Stack<a class="headerlink" href="#technology-stack" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="../_images/sphinx.png"><img alt="../_images/sphinx.png" src="../_images/sphinx.png" style="height: 60px;" /></a>
+<a class="reference internal image-reference" href="../_images/cpp.png"><img alt="../_images/cpp.png" src="../_images/cpp.png" style="height: 60px;" /></a>
+<a class="reference internal image-reference" href="../_images/gtest.png"><img alt="../_images/gtest.png" src="../_images/gtest.png" style="height: 60px;" /></a>
+<a class="reference internal image-reference" href="../_images/github-pages.png"><img alt="../_images/github-pages.png" src="../_images/github-pages.png" style="height: 60px;" /></a>
+<a class="reference internal image-reference" href="../_images/docker.png"><img alt="../_images/docker.png" src="../_images/docker.png" style="height: 60px;" /></a>
+<a class="reference internal image-reference" href="../_images/circuit_maker.png"><img alt="../_images/circuit_maker.png" src="../_images/circuit_maker.png" style="height: 60px;" /></a>
+<a class="reference internal image-reference" href="../_images/bambulab.png"><img alt="../_images/bambulab.png" src="../_images/bambulab.png" style="height: 60px;" /></a>
+</section>
+</section>
 </section>
 
 

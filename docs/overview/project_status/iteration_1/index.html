@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DragonFly Mk1 &mdash; DragonFly  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=86f27845" />
+
+  
+  
+        <script src="../../../_static/jquery.js?v=8dae8fb0"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="DragonFly Mk2" href="../iteration_2/index.html" />
+    <link rel="prev" title="Project Status" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            DragonFly
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Project Overview</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Project Status</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#previous-iterations">Previous Iterations</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">DragonFly Mk1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../iteration_2/index.html">DragonFly Mk2</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#current-iteration">Current Iteration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../system_architecture/index.html">System Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../safety_considerations/index.html">Safety Considerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#key-features">Key Features</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/index.html">Software</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">DragonFly</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Project Overview</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Project Status</a></li>
+      <li class="breadcrumb-item active">DragonFly Mk1</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/overview/project_status/iteration_1/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dragonfly-mk1">
+<h1>DragonFly Mk1<a class="headerlink" href="#dragonfly-mk1" title="Link to this heading"></a></h1>
+<section id="goals">
+<h2>Goals<a class="headerlink" href="#goals" title="Link to this heading"></a></h2>
+<p>Create a basic prototype to de-risk the most critical aspects early :</p>
+<ul class="simple">
+<li><p>Mechanical strength</p></li>
+<li><p>Electronics design</p></li>
+<li><p>Challenging software devs ( low latency videostreaming )</p></li>
+</ul>
+</section>
+<section id="outcome">
+<h2>Outcome<a class="headerlink" href="#outcome" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Mechanical Design</dt><dd><ul>
+<li><p>My first mechanical design was way too weak. I overestimated the stiffness of carbon fiber.</p></li>
+<li><p>I wrongly excluded 3D printing functional parts because I was using BambuLab’s PLA Aero which even though described as “Tough with Good Impact Resistance” is very weak and brittle. Printing with PETG made me realise that 3D printed parts can be strong enough to take some load.</p></li>
+<li><p>I was not really happy with FreeCad, I found it slow and unintuitive.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Electronics design</dt><dd><ul>
+<li><p>The electronics design was functional, but way too bulky</p></li>
+<li><p>I tried to have all the connectors accessible from the outside of the fuselage for ease of disassembly, this was a bad idea for aerodynamics, weight, and electronics layout.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Software</dt><dd><ul>
+<li><p>I planned to use ROS, but compilation times were waaaay too long. I knew they could be because i worked on a big ROS project before but i expected them to be manageable for a small project. They are not. Cross-compiling a simple project for arm64 can take several minutes if you add custom message declarations.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Overall</dt><dd><ul>
+<li><p>I realised how hazardous flying such a big plane could be. My design lacked fail-safes and redundancies</p></li>
+<li><p>I realised using an Xbox controller to fly the plane was not a very good idea as it lacked latched inputs for throttle, and control modes.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Antoine Diers.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
