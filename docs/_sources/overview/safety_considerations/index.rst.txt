@@ -1,10 +1,8 @@
 Safety Considerations
-========================
-
-----
+=====================
 
 System Architecture
-------------------------
+-------------------
 
 The system architecture can be split in three sections : 
 
@@ -19,7 +17,7 @@ The **Low-Criticality Section** contains the rest of the system, it allows for n
 ----
 
 Failure scenarios
-------------------------
+-----------------
 
 Not all failure scenarios combinations are described here, but this section describes the behavior of the system for some "expected" failures, as well as a criticity score :
 
@@ -39,7 +37,7 @@ Payloads Computer Crash             🟧 / 🟩 depending on distance
 ==================================  ============
 
 Payloads Computer Crash
-_________________________
+_______________________
 
 **Criticity :** 🟩 / 🟧 depending on distance
 
@@ -67,7 +65,7 @@ When out of RF range, the Flight Controller will go into :ref:`closed_loop_desce
     This would allow for a "Return Home" behavior or emergency landing.
 
 Servos Power Outage
-_________________________
+___________________
 
 **Criticity :** 🟥
 
@@ -76,7 +74,7 @@ _________________________
 **Consequences :** DragonFly has no control over its attitude and most likely crashes very fast.
 
 Computing Section Power Outage
-_________________________
+______________________________
 
 **Criticity :** 🟥
 
@@ -86,7 +84,7 @@ _________________________
 Dragonfly crashes more or less quicly depending on servos behavior (return to 0 / keep previous position / go numb)
 
 Sensors Section Power Outage
-_________________________
+____________________________
 
 **Criticity :** 🟧
 
@@ -111,7 +109,7 @@ The Flight Controller goes into :ref:`closed_loop_descent` mode until
 ----
 
 Software
-------------------------
+--------
 
 Critical Section Software
 _________________________

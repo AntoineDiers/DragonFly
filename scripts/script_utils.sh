@@ -43,7 +43,7 @@ generate_build_docker()
 
 run_build_docker()
 {
-    docker run -t --rm --user "$(id -u):$(id -g)" -v $DRAGONFLY_ROOT_PATH:/workspace $DOCKER_BUILD_IMAGE_NAME bash -c "cd /workspace && $1"
+    docker run -t --rm --user "$(id -u):$(id -g)" --network=host -v $DRAGONFLY_ROOT_PATH:/workspace $DOCKER_BUILD_IMAGE_NAME bash -c "cd /workspace && $1"
 }
 
 build()

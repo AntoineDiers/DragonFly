@@ -9,3 +9,4 @@ Software
     communication/index
     flight_controller/index
     remote_control/index
+    code_coverage/index
