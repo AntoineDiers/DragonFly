@@ -19,3 +19,5 @@ else
 fi
 
 run_build_docker "$CMD"
+
+touch docs/.nojekyll
