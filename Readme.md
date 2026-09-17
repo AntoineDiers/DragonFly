@@ -6,6 +6,7 @@ This repository contains all the software required to operate it as well as inst
 Documentation can be found at https://antoinediers.github.io/DragonFly
 
 <img src="docs_src/images/dragonfly_4.png" width="100%">
+<img src="docs_src/images/hmi.png" width="100%">
 <p>
     <img src="docs_src/images/dragonfly_1.png" width="32%">
     <img src="docs_src/images/dragonfly_2.png" width="32%">
