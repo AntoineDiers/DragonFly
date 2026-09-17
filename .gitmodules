@@ -4,3 +4,9 @@
 [submodule "software/deps/googletest"]
 	path = software/deps/googletest
 	url = https://github.com/google/googletest.git
+[submodule "software/deps/cpp-httplib"]
+	path = software/deps/cpp-httplib
+	url = git@github.com:yhirose/cpp-httplib.git
+[submodule "software/deps/json"]
+	path = software/deps/json
+	url = git@github.com:nlohmann/json.git

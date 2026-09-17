@@ -1,0 +1,61 @@
+
+<div class="connection-overlay">
+
+    <div class="peer">
+        <span> FLIGHT CONTROLLER </span>
+        <div class="links">
+            <div class="link">
+                <div class="icon icon-4g" [ngClass]="getDiagClass(gc_connection_state.fc_via_4g.connection_status)" ></div>
+                <div class="link-stats">
+                    <span>{{gc_connection_state.fc_via_4g.ping_ms}} ms</span>
+                    <span>{{gc_connection_state.fc_via_4g.packet_loss_percent}} %</span>
+                </div>
+            </div>
+            <div class="link">
+                <div class="icon icon-rf" [ngClass]="getDiagClass(gc_connection_state.fc_via_rf.connection_status)" ></div>
+                <div class="link-stats">
+                    <span>{{gc_connection_state.fc_via_rf.ping_ms}} ms</span>
+                    <span>{{gc_connection_state.fc_via_rf.packet_loss_percent}} %</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="vertical-bar"></div>
+
+    <div class="peer">
+        <span> PAYLOAD COMPUTER </span>
+        <div class="links">
+            <div class="link">
+                <div class="icon icon-4g" [ngClass]="getDiagClass(gc_connection_state.pc_via_4g.connection_status)" ></div>
+                <div class="link-stats">
+                    <span>{{gc_connection_state.pc_via_4g.ping_ms}} ms</span>
+                    <span>{{gc_connection_state.pc_via_4g.packet_loss_percent}} %</span>
+                </div>
+            </div>
+            <div class="link">
+                <div class="icon icon-rf" [ngClass]="getDiagClass(gc_connection_state.pc_via_rf.connection_status)" ></div>
+                <div class="link-stats">
+                    <span>{{gc_connection_state.pc_via_rf.ping_ms}} ms</span>
+                    <span>{{gc_connection_state.pc_via_rf.packet_loss_percent}} %</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="vertical-bar"></div>
+
+    <div class="peer">
+        <span> REMOTE CONTROL </span>
+        <div class="links">
+            <div class="link">
+                <div class="icon icon-usb" [ngClass]="getDiagClass(gc_connection_state.rc.connection_status)" ></div>
+                <div class="link-stats">
+                    <span>{{gc_connection_state.rc.ping_ms}} ms</span>
+                    <span>{{gc_connection_state.rc.packet_loss_percent}} %</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,9 +1,11 @@
 #include "Generation.h"
 
-static const std::string TEMPLATE = R"(
+#include "../include/dragonfly_msgs/internal/base_types/BaseType.h"
+
+static const std::string MSG_TEMPLATE = R"(
 #pragma once
 
-#include <dragonfly_msgs/Utils.h>
+#include <dragonfly_msgs/internal/Common.h>
 
 <INCLUDES>
 
@@ -15,60 +17,68 @@ public:
 
 <FIELDS>
 
-    static constexpr uint32_t _BodySize = <SIZE> 0;
-    static constexpr uint32_t _SerialisationSize = sizeof(MsgId) + _BodySize;
-    static constexpr uint8_t _Id = <ID>;
+    static constexpr uint32_t _SerialisationSizeBits = 
+<FIELDS_SIZES>        0;
+    static constexpr uint32_t _Id = <ID>;
+    static constexpr uint32_t _IdSizeBits = <ID_SIZE_BITS>;
+    static constexpr uint32_t _SizeBytes = serialisation::sizeBitsToBytes(_SerialisationSizeBits + _IdSizeBits);
+
+    template<uint32_t BufferSize>
+    void _serialise(Buffer<BufferSize>& buffer) const
+    {
+        static_assert(BufferSize >= _SizeBytes);
+
+        serialisation::WBitBuffer bit_buffer(buffer.data.data());
+        bit_buffer.write(_Id, _IdSizeBits);
+        _serialise(bit_buffer);
+
+        buffer.size = _SizeBytes;
+
+        return;
+    }
 
     template<uint32_t BufferSize>
     bool _deserialise(const Buffer<BufferSize>& buffer)
     {
-        static_assert(BufferSize >= _SerialisationSize);
+        static_assert(BufferSize >= _SizeBytes);
 
-        const uint8_t* ptr = buffer.data.data();
+        if(buffer.size != _SizeBytes) { return false; }
+        
+        serialisation::RBitBuffer bit_buffer(buffer.data.data());
+        if(bit_buffer.read(_IdSizeBits) != _Id) { return false; }
 
-        if(buffer.size != _SerialisationSize) { return false; }
-        MsgId id;
-        internal::deserialiseField(id, ptr);
-        if(id != _Id) { return false; }
-
-        _deserialiseFields(ptr);
-
+        _deserialise(bit_buffer);
         return true;
     }
     
-    template<uint32_t BufferSize>
-    void _serialise(Buffer<BufferSize>& buffer) const
+    void _serialise(serialisation::WBitBuffer& buffer) const
     {
-        static_assert(BufferSize >= _SerialisationSize);
+<SERIALISE>    }
 
-        uint8_t* ptr = buffer.data.data();
-        internal::serialiseField(_Id, ptr);
-        _serialiseFields(ptr);
-        buffer.size = _SerialisationSize;
+    void _deserialise(serialisation::RBitBuffer& buffer)
+    {
+<DESERIALISE>    }
+
+    nlohmann::json _serialiseJson() const
+    {
+        nlohmann::json res;
+<SERIALISE_JSON>        return res;
     }
 
-    void _deserialiseFields(const uint8_t* &buffer)
-    {
-<DESERIALISE>
-    }
+};
 
-    void _serialiseFields(uint8_t* &buffer) const
-    {
-<SERIALISE>
-    }
+<NAMESPACE_END>
 
-    void _print(uint32_t n_tabs = 0) const
-    {
-        char tabs[4 * 5 + 1] = {0};
-        for(uint32_t i = 0; i < std::min(4 * n_tabs, (uint32_t)sizeof(tabs) - 1); i++)
-        {
-            tabs[i] = ' ';
-        }
+)";
 
-        std::cout << "{\n";
-<PRINT>
-        std::cout << tabs << "}";
-    }
+static const std::string ENUM_TEMPLATE = R"(
+#pragma once
+
+<NAMESPACE_START>
+
+enum class <ENUM_NAME>
+{
+<ENUM_VALUES>    _COUNT
 };
 
 <NAMESPACE_END>
@@ -78,7 +88,6 @@ public:
 static const std::string ROOT_HEADER_TEMPLATE = R"(
 #pragma once
 
-#include <dragonfly_msgs/Utils.h>
 <INCLUDES>
 
 namespace dragonfly_msgs
@@ -97,17 +106,17 @@ namespace dragonfly_msgs
         }
     }
     
-    static constexpr uint32_t MAX_MSG_SIZE = sizeof(MsgId) + internal::max(
+    static constexpr uint32_t MAX_MSG_SIZE = internal::max(
 <SIZES>        0);
 }
 )";
 
-void generateHeaderFiles(const std::vector<MsgDesc> &msg_files, const std::filesystem::path &root_path)
+void generateHeaderFiles(
+    const std::vector<MsgDesc> &msg_files, 
+    const std::vector<EnumDesc>& enum_files, 
+    const std::filesystem::path &root_path)
 {
-    if(msg_files.size() > 255)
-    {
-        throw std::runtime_error("Too many message files to generate, max = 255");
-    }
+    uint8_t id_size_bits = dragonfly_msgs::base_types::neededBits(msg_files.size());
 
     std::string root_header_content = ROOT_HEADER_TEMPLATE;
     std::string root_header_includes;
@@ -125,17 +134,15 @@ void generateHeaderFiles(const std::vector<MsgDesc> &msg_files, const std::files
         {
             root_header_sizes += ns + "::";
         }
-        root_header_sizes += msg.class_name + "::_BodySize,\n";
+        root_header_sizes += msg.class_name + "::_SizeBytes,\n";
 
-        std::string content = TEMPLATE;
-        
         std::string includes;
         std::string namespace_start;
-        std::string size;
         std::string fields;
+        std::string fields_size;
         std::string serialise;
         std::string deserialise;
-        std::string print;
+        std::string serialise_json;
         std::string namespace_end;
 
         for(auto& ns : msg.ns)
@@ -144,38 +151,31 @@ void generateHeaderFiles(const std::vector<MsgDesc> &msg_files, const std::files
             namespace_end += "}"; 
         }
 
-        for(auto& field : msg.fields)
+        for(auto& include : msg.includes)
         {
-            if(!field.is_base_type)
-            {
-                std::string include_path = std::regex_replace(field.type, std::regex("::"), "/");
-                includes += "#include <dragonfly_msgs/msg/" + include_path + ".h>\n";
-            }
-
-            std::string size_str = field.array_size.has_value() ? (std::to_string(field.array_size.value()) + "*") : "";
-            size +=  
-            (field.array_size.has_value() ? (std::to_string(field.array_size.value()) + "*") : "") +
-            (field.is_base_type ? ("sizeof(" + field.type + ")") : field.type + "::_BodySize") + 
-            " + "; 
-
-            fields += "    " + field.type + " " + field.name + (field.array_size.has_value() ? ("[" + std::to_string(field.array_size.value()) + "]") : "") + ";\n";
-
-            serialise += "        internal::" + std::string(field.array_size.has_value() ? "serialiseArrayField" : "serialiseField") + "<" + field.type + ">(" + field.name + ", buffer);\n";
-
-            deserialise += "        internal::" + std::string(field.array_size.has_value() ? "deserialiseArrayField" : "deserialiseField") + "<" + field.type + ">(" + field.name + ", buffer);\n";
-        
-            print += "        internal::" + std::string(field.array_size.has_value() ? "printArrayField" : "printField") + "<" + field.type + ">(\"" + field.name + "\", " + field.name + ", n_tabs + 1);\n";
+            includes += include + "\n";
         }
 
+        for(auto& field : msg.fields)
+        {
+            fields +=           "        " + field.type + " " + field.name + ";\n";
+            fields_size +=      "        " + field.type + "::_SerialisationSizeBits + \n";
+            serialise +=        "        " + field.name + "._serialise(buffer);\n";
+            deserialise +=      "        " + field.name + "._deserialise(buffer);\n";
+            serialise_json +=   "        res[\"" + field.name + "\"] = " + field.name + "._serialiseJson();\n";
+        }
+
+        std::string content = MSG_TEMPLATE;
         content = std::regex_replace(content, std::regex("<INCLUDES>"),         includes);
         content = std::regex_replace(content, std::regex("<NAMESPACE_START>"),  namespace_start);
         content = std::regex_replace(content, std::regex("<NAME>"),             msg.class_name);
-        content = std::regex_replace(content, std::regex("<SIZE>"),             size);
         content = std::regex_replace(content, std::regex("<ID>"),               std::to_string(id));
+        content = std::regex_replace(content, std::regex("<ID_SIZE_BITS>"),     std::to_string(id_size_bits));
         content = std::regex_replace(content, std::regex("<FIELDS>"),           fields);
+        content = std::regex_replace(content, std::regex("<FIELDS_SIZES>"),     fields_size);
         content = std::regex_replace(content, std::regex("<SERIALISE>"),        serialise);
         content = std::regex_replace(content, std::regex("<DESERIALISE>"),      deserialise);
-        content = std::regex_replace(content, std::regex("<PRINT>"),            print);
+        content = std::regex_replace(content, std::regex("<SERIALISE_JSON>"),   serialise_json);
         content = std::regex_replace(content, std::regex("<NAMESPACE_END>"),    namespace_end);
 
         std::filesystem::create_directories(msg.header_filepath.parent_path());
@@ -190,10 +190,48 @@ void generateHeaderFiles(const std::vector<MsgDesc> &msg_files, const std::files
         id++;
     }
 
+    for(auto& en : enum_files)
+    {
+        std::cout << "Generating header file : " << en.header_filepath.string() << " ...\n";
+        
+        std::string include_path = std::filesystem::relative(en.header_filepath, root_path / "include").string();
+        root_header_includes += "#include <" + include_path + ">\n";
+
+        std::string namespace_start;
+        std::string values;
+        std::string namespace_end;
+
+        for(auto& ns : en.ns)
+        {
+            namespace_start += "namespace " + ns + " { \n";
+            namespace_end += "}"; 
+        }
+
+        for(auto& value : en.values)
+        {
+            values += "    " + value + ",\n";
+        }
+
+        std::string content = ENUM_TEMPLATE;
+        content = std::regex_replace(content, std::regex("<NAMESPACE_START>"),  namespace_start);
+        content = std::regex_replace(content, std::regex("<ENUM_NAME>"),        en.enum_name);
+        content = std::regex_replace(content, std::regex("<ENUM_VALUES>"),      values);
+        content = std::regex_replace(content, std::regex("<NAMESPACE_END>"),    namespace_end);
+
+        std::filesystem::create_directories(en.header_filepath.parent_path());
+        std::ofstream file(en.header_filepath);
+        file << content;
+
+        if(!file.good())
+        {
+            throw std::runtime_error("Failed to write to " + en.header_filepath.string());
+        }
+    }
+
     root_header_content = std::regex_replace(root_header_content, std::regex("<INCLUDES>"), root_header_includes);
     root_header_content = std::regex_replace(root_header_content, std::regex("<SIZES>"),    root_header_sizes);
 
-    std::filesystem::path root_header_filepath = root_path / "include" / "dragonfly_msgs" / "msgs.h";
+    std::filesystem::path root_header_filepath = root_path / "include" / "dragonfly_msgs" / "dragonfly_msgs.h";
     std::ofstream file(root_header_filepath);
     file << root_header_content;
 

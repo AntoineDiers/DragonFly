@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2026-08-31 19:38:49</td>
+      <td>2026-09-17 13:11:37</td>
     </tr>
   </table>
 </div>
@@ -79,7 +79,7 @@
     <tr><td><a href="#l55">Periodic&lt;FlightControllerInputs::Attitude&gt;::update(FlightControllerInputs::Attitude const&amp;) (line 55)</a></td><td>called 2687 times, returned 2687 times</td><td>100.0%</td></tr>
     <tr><td><a href="#l51">Periodic&lt;float&gt;::Periodic(PeriodicDataConfig const&amp;, ClockInterface*) (line 51)</a></td><td>called 1 time, returned 1 time</td><td>100.0%</td></tr>
     <tr><td><a href="#l75">Periodic&lt;float&gt;::getState() (line 75)</a></td><td>called 1 time, returned 1 time</td><td>61.0%</td></tr>
-    <tr><td><a href="#l55">Periodic&lt;float&gt;::update(float const&amp;) (line 55)</a></td><td>called 99 times, returned 99 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l55">Periodic&lt;float&gt;::update(float const&amp;) (line 55)</a></td><td>called 9 times, returned 9 times</td><td>100.0%</td></tr>
   </table>
 </details>
 
@@ -127,7 +127,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;dragonfly_msgs/msg/PeriodicDataState.h&gt;</span></td>
+      <td class="src "><span class="c1">//#include &lt;dragonfly_msgs/msg/PeriodicDataState.h&gt;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l6" href="#l6">6</a></td>
@@ -253,77 +253,77 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="n">dragonfly_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PeriodicDataState</span><span class="w"> </span><span class="nf">toMsg</span><span class="p">()</span></td>
+      <td class="src "><span class="w">    </span><span class="cm">/*dragonfly_msgs::msg::PeriodicDataState toMsg()</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l24" href="#l24">24</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="p">{</span></td>
+      <td class="src "><span class="cm">    {</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l25" href="#l25">25</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">dragonfly_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PeriodicDataState</span><span class="w"> </span></td>
+      <td class="src "><span class="cm">        return dragonfly_msgs::msg::PeriodicDataState </span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l26" href="#l26">26</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">        </span><span class="p">{</span></td>
+      <td class="src "><span class="cm">        {</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l27" href="#l27">27</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">            </span><span class="p">.</span><span class="n">is_ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">is_ok</span><span class="p">,</span></td>
+      <td class="src "><span class="cm">            .is_ok = is_ok,</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l28" href="#l28">28</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">            </span><span class="p">.</span><span class="n">expected_rate_integer_part_hz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">std</span><span class="o">::</span><span class="n">floor</span><span class="p">(</span><span class="n">expected_rate_hz</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">),</span></td>
+      <td class="src "><span class="cm">            .expected_rate_integer_part_hz = (uint8_t) std::clamp((int)std::floor(expected_rate_hz), 0, 255),</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l29" href="#l29">29</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">            </span><span class="p">.</span><span class="n">expected_rate_decimal_part_hz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)(</span><span class="mi">255</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">expected_rate_hz</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">floor</span><span class="p">(</span><span class="n">expected_rate_hz</span><span class="p">))),</span></td>
+      <td class="src "><span class="cm">            .expected_rate_decimal_part_hz = (uint8_t)(255 * (expected_rate_hz - std::floor(expected_rate_hz))),</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l30" href="#l30">30</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">            </span><span class="p">.</span><span class="n">actual_rate_integer_part_hz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">std</span><span class="o">::</span><span class="n">floor</span><span class="p">(</span><span class="n">actual_rate_hz</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">),</span></td>
+      <td class="src "><span class="cm">            .actual_rate_integer_part_hz = (uint8_t) std::clamp((int)std::floor(actual_rate_hz), 0, 255),</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l31" href="#l31">31</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">            </span><span class="p">.</span><span class="n">actual_rate_decimal_part_hz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="p">)(</span><span class="mi">255</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">actual_rate_hz</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">floor</span><span class="p">(</span><span class="n">actual_rate_hz</span><span class="p">))),</span></td>
+      <td class="src "><span class="cm">            .actual_rate_decimal_part_hz = (uint8_t)(255 * (actual_rate_hz - std::floor(actual_rate_hz))),</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l32" href="#l32">32</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">        </span><span class="p">};</span></td>
+      <td class="src "><span class="cm">        };</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l33" href="#l33">33</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="p">}</span></td>
+      <td class="src "><span class="cm">    }</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l34" href="#l34">34</a></td>
@@ -337,63 +337,63 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="n">PeriodicDataState</span><span class="w"> </span><span class="nf">fromMsg</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">dragonfly_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">PeriodicDataState</span><span class="o">&amp;</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span></td>
+      <td class="src "><span class="cm">    static PeriodicDataState fromMsg(const dragonfly_msgs::msg::PeriodicDataState&amp; msg)</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l36" href="#l36">36</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="p">{</span></td>
+      <td class="src "><span class="cm">    {</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l37" href="#l37">37</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">PeriodicDataState</span></td>
+      <td class="src "><span class="cm">        return PeriodicDataState</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l38" href="#l38">38</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">        </span><span class="p">{</span></td>
+      <td class="src "><span class="cm">        {</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l39" href="#l39">39</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">            </span><span class="p">.</span><span class="n">is_ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">is_ok</span><span class="p">,</span></td>
+      <td class="src "><span class="cm">            .is_ok = msg.is_ok,</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l40" href="#l40">40</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">            </span><span class="p">.</span><span class="n">expected_rate_hz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">expected_rate_integer_part_hz</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">expected_rate_decimal_part_hz</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">255.0f</span><span class="p">,</span></td>
+      <td class="src "><span class="cm">            .expected_rate_hz = msg.expected_rate_integer_part_hz + msg.expected_rate_decimal_part_hz / 255.0f,</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l41" href="#l41">41</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">            </span><span class="p">.</span><span class="n">actual_rate_hz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">actual_rate_integer_part_hz</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">msg</span><span class="p">.</span><span class="n">actual_rate_decimal_part_hz</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">255.0f</span><span class="p">,</span></td>
+      <td class="src "><span class="cm">            .actual_rate_hz = msg.actual_rate_integer_part_hz + msg.actual_rate_decimal_part_hz / 255.0f,</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l42" href="#l42">42</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">        </span><span class="p">};</span></td>
+      <td class="src "><span class="cm">        };</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l43" href="#l43">43</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="p">}</span></td>
+      <td class="src "><span class="cm">    }*/</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l44" href="#l44">44</a></td>
@@ -476,7 +476,7 @@
       <td class="lineno"><a id="l55" href="#l55">55</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">5572</td>
+      <td class="linecount coveredLine">5392</td>
       <td class="src coveredLine"><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">update</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span></td>
     </tr>
     <tr class="source-line">
@@ -490,7 +490,7 @@
       <td class="lineno"><a id="l57" href="#l57">57</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">5572</td>
+      <td class="linecount coveredLine">5392</td>
       <td class="src coveredLine"><span class="w">        </span><span class="n">_mean_period_s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">updateMeanPeriod</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -499,19 +499,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 2786 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 2696 times.</div>
           <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
         </div>
         </details>
       </td>
-      <td class="linecount partialCoveredLine">5572</td>
+      <td class="linecount partialCoveredLine">5392</td>
       <td class="src partialCoveredLine"><span class="w">        </span><span class="n">_last_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">_clock</span><span class="o">-&gt;</span><span class="n">getTime_us</span><span class="p">()};</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l59" href="#l59">59</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">5572</td>
+      <td class="linecount coveredLine">5392</td>
       <td class="src coveredLine"><span class="w">    </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -928,7 +928,7 @@
       <td class="lineno"><a id="l107" href="#l107">107</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">2787</td>
+      <td class="linecount coveredLine">2697</td>
       <td class="src coveredLine"><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">updateMeanPeriod</span><span class="p">()</span></td>
     </tr>
     <tr class="source-line">
@@ -942,7 +942,7 @@
       <td class="lineno"><a id="l109" href="#l109">109</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">2787</td>
+      <td class="linecount coveredLine">2697</td>
       <td class="src coveredLine"><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">_last_value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">nullopt</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -956,28 +956,28 @@
       <td class="lineno"><a id="l111" href="#l111">111</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">2784</td>
+      <td class="linecount coveredLine">2694</td>
       <td class="src coveredLine"><span class="w">        </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_clock</span><span class="o">-&gt;</span><span class="n">getTime_us</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l112" href="#l112">112</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">2784</td>
+      <td class="linecount coveredLine">2694</td>
       <td class="src coveredLine"><span class="w">        </span><span class="kt">float</span><span class="w"> </span><span class="n">time_since_last_s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_last_value</span><span class="o">-&gt;</span><span class="n">getElapsed_us</span><span class="p">(</span><span class="n">now</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1000000.0</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l113" href="#l113">113</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">2784</td>
+      <td class="linecount coveredLine">2694</td>
       <td class="src coveredLine"><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">time_since_last_s</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">_config</span><span class="p">.</span><span class="n">rate_sliding_window_s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">nullopt</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l114" href="#l114">114</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">2782</td>
+      <td class="linecount coveredLine">2692</td>
       <td class="src coveredLine"><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">_mean_period_s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">time_since_last_s</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -991,14 +991,14 @@
       <td class="lineno"><a id="l116" href="#l116">116</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">2778</td>
+      <td class="linecount coveredLine">2688</td>
       <td class="src coveredLine"><span class="w">        </span><span class="kt">float</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">time_since_last_s</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">_config</span><span class="p">.</span><span class="n">rate_sliding_window_s</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l117" href="#l117">117</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">2778</td>
+      <td class="linecount coveredLine">2688</td>
       <td class="src coveredLine"><span class="w">        </span><span class="k">return</span><span class="w">  </span><span class="n">weight</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">time_since_last_s</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mf">1.0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">_mean_period_s</span><span class="p">.</span><span class="n">value</span><span class="p">();</span><span class="w">    </span></td>
     </tr>
     <tr class="source-line">

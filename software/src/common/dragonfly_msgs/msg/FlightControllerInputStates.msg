@@ -1,5 +1,0 @@
-PeriodicDataState remote_control
-PeriodicDataState primary_attitude
-PeriodicDataState backup_attitude
-PeriodicDataState altitude
-PeriodicDataState battery_level

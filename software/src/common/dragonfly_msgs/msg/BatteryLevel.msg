@@ -1,1 +1,0 @@
-f32 battery_level_percent

@@ -11,3 +11,12 @@ ENV picotool_DIR=/opt/picotool
 # Install sphinx
 COPY assets/install_sphinx.sh /tmp/install_sphinx.sh
 RUN /tmp/install_sphinx.sh
+
+# Install npm
+RUN apt-get update && \
+    apt-get install -y curl ca-certificates && \
+    curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs && \
+    npm install -g @angular/cli
+
+ENV NG_CLI_ANALYTICS=false

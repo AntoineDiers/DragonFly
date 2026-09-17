@@ -6,8 +6,6 @@
 #include <config/remote_control/leds/Config.h>
 #include <config/remote_control/diagnostics/Config.h>
 
-#include <dragonfly_msgs/msg/remote_control/Diagnostics.h>
-
 #include "status_led/StatusLed.h"
 #include "inputs/Inputs.h"
 
@@ -19,7 +17,7 @@ public:
   
     RemoteControl(const HardwareInterface& hw_interface) : 
         _hw_interface(hw_interface),
-        _comms_multiplexer(hw_interface.clock, hw_interface.gs_usb, hw_interface.rf_uart, PeerId::REMOTE_CONTROL),
+        _comms_multiplexer(hw_interface.clock, hw_interface.rf_uart, hw_interface.gs_usb, PeerId::REMOTE_CONTROL),
         _inputs(hw_interface),
         _send_inputs_timer(hw_interface.clock, config::remote_control::inputs::SEND_INPUTS_PERIOD_MS),
         _send_diagnostics_timer(hw_interface.clock, config::remote_control::diags::SEND_PERIOD_MS),
@@ -48,24 +46,10 @@ public:
         if(_send_inputs_timer.poll())
         {
             bool inputs_error;
-            dragonfly_msgs::msg::remote_control::Inputs inputs = _inputs.read(inputs_error);
+            dragonfly_msgs::msgs::remote_control::Inputs inputs = _inputs.read(inputs_error);
             _comms_multiplexer.sendMessage(inputs, PeerId::FLIGHT_CONTROLLER);
-            
+
             _status_led.setStatus(inputs_error ? StatusLed::Status::WARN : StatusLed::Status::OK);
-        }
-
-        // -------------------------
-        // Send diagnostics when necessary
-        // -------------------------
-
-        if(_send_diagnostics_timer.poll())
-        {
-            dragonfly_msgs::msg::remote_control::Diagnostics diags
-            {
-                .connections_status = _comms_multiplexer.getConnectionsStatus(),
-                .inputs_diagnostics = _inputs.getDiagnostics()
-            };
-            _comms_multiplexer.sendMessage(diags, PeerId::GROUND_COMPUTER);
         }
 
         // -------------------------

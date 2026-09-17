@@ -1,1 +1,0 @@
-f32 altitude_m

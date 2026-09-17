@@ -16,7 +16,8 @@ target_include_directories(remote_control PRIVATE
     ../common/dragonfly_datagram_protocol/include
     ../common/dragonfly_utils/include
     ../common/rpi_pico_utils/include
-    ../common/config/include)
+    ../common/config/include
+    ../../deps/json/include)
 
 target_compile_options(remote_control PRIVATE
     -Wall

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <rpi_pico_utils/utils/LookUpTable.h>
-#include "../../../flight_controller/src/battery_stats_handler/BatteryStatsHandler.h"
+#include "../../../flight_controller/src/battery_sensors_driver/BatterySensorsDriver.h"
 #include <rpi_pico_utils/utils/Periodic.h>
 
 #include "../gpio/Config.h"
@@ -39,7 +39,7 @@ namespace config::flight_controller::battery
         LookUpTableInterface::Point{100, 16.80},
     });
 
-    static constexpr BatteryStatsHandler::Config STATS_HANDLER_CONFIG
+    static constexpr BatterySensorsDriver::Config DRIVER_CONFIG
     {
         .ads1115_config = 
         {

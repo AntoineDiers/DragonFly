@@ -3,8 +3,7 @@
 #include "../hardware/HardwareInterface.h"
 #include <ads1115_driver/Ads1115Driver.h>
 
-#include <dragonfly_msgs/msg/remote_control/Inputs.h>
-#include <dragonfly_msgs/msg/remote_control/InputsDiagnostics.h>
+#include <dragonfly_msgs/msgs/remote_control/Inputs.h>
 #include <config/remote_control/inputs/Config.h>
 #include <config/remote_control/inputs/ads_1115/Config.h>
 
@@ -37,16 +36,16 @@ public:
         }
     }
 
-    dragonfly_msgs::msg::remote_control::Inputs read(bool& read_error)
+    dragonfly_msgs::msgs::remote_control::Inputs read(bool& read_error)
     {
-        dragonfly_msgs::msg::remote_control::Inputs res;
+        dragonfly_msgs::msgs::remote_control::Inputs res;
 
-        res.is_armed = _hw_interface.arm_switch->read();
-        res.auto_mode = _hw_interface.auto_switch->read();
+        res.arm_enabled = _hw_interface.arm_switch->read();
+        res.auto_enabled = _hw_interface.auto_switch->read();
         
-        res.down_up =       convertAdcReading(_hw_interface.down_up_stick->readVoltage(), config::remote_control::inputs::DOWN_UP_ADC_CONFIG);
-        res.left_right =    convertAdcReading(_hw_interface.left_right_stick->readVoltage(), config::remote_control::inputs::LEFT_RIGHT_ADC_CONFIG);
-        res.throttle =      convertAdcReading(_hw_interface.throttle_stick->readVoltage(), config::remote_control::inputs::THROTTLE_ADC_CONFIG);
+        res.down_up =          convertAdcReading(_hw_interface.down_up_stick->readVoltage(), config::remote_control::inputs::DOWN_UP_ADC_CONFIG);
+        res.left_right =       convertAdcReading(_hw_interface.left_right_stick->readVoltage(), config::remote_control::inputs::LEFT_RIGHT_ADC_CONFIG);
+        res.throttle_percent = convertAdcReading(_hw_interface.throttle_stick->readVoltage(), config::remote_control::inputs::THROTTLE_ADC_CONFIG);
 
         std::optional<float> flaps_voltage = _flaps_voltage.getLastValue(config::remote_control::inputs::ads_1115::INPUTS_TIMEOUT_MS);
         std::optional<float> roll_stab_voltage = _roll_stab_voltage.getLastValue(config::remote_control::inputs::ads_1115::INPUTS_TIMEOUT_MS);
@@ -54,26 +53,16 @@ public:
 
         read_error = !(flaps_voltage && roll_stab_voltage && pitch_stab_voltage);
 
-        res.flaps = convertAdcReading(flaps_voltage.value_or(0), config::remote_control::inputs::FLAPS_ADC_CONFIG);
-        res.roll_stabilization_level = convertAdcReading(roll_stab_voltage.value_or(0), config::remote_control::inputs::ROLL_STAB_ADC_CONFIG);
-        res.pitch_stabilization_level = convertAdcReading(pitch_stab_voltage.value_or(0), config::remote_control::inputs::PITCH_STAB_ADC_CONFIG);
+        res.flaps_deg = convertAdcReading(flaps_voltage.value_or(0), config::remote_control::inputs::FLAPS_ADC_CONFIG);
+        res.roll_stab_level_percent = convertAdcReading(roll_stab_voltage.value_or(0), config::remote_control::inputs::ROLL_STAB_ADC_CONFIG);
+        res.pitch_stab_level_percent = convertAdcReading(pitch_stab_voltage.value_or(0), config::remote_control::inputs::PITCH_STAB_ADC_CONFIG);
 
         return res;
     }
 
-    dragonfly_msgs::msg::remote_control::InputsDiagnostics getDiagnostics()
-    {
-        return dragonfly_msgs::msg::remote_control::InputsDiagnostics
-        {
-            .flaps_knob_state = _flaps_voltage.getState().toMsg(),
-            .roll_stab_knob_state = _roll_stab_voltage.getState().toMsg(),
-            .pitch_stab_knob_state = _pitch_stab_voltage.getState().toMsg()
-        };
-    }
-
 private:
 
-    uint8_t convertAdcReading(float voltage, const config::remote_control::inputs::AdcConfig& conf)
+    float convertAdcReading(float voltage, const config::remote_control::inputs::AdcConfig& conf)
     {
         float ratio = std::clamp(
             (voltage - conf.min_voltage) / (conf.max_voltage - conf.min_voltage),
@@ -89,7 +78,7 @@ private:
 
         ratio = std::clamp(ratio, 0.0f, 1.0f);
 
-        return std::floor(255 * ratio);
+        return conf.min_val + ratio * (conf.max_val - conf.min_val);
     }
 
     HardwareInterface _hw_interface;

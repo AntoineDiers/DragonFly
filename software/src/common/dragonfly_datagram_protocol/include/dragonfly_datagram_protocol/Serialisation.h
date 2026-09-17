@@ -3,11 +3,12 @@
 #include <cstdint>
 
 #include <dragonfly_utils/Buffer.h>
+#include <dragonfly_utils/Event.h>
 #include <optional>
 #include <cstring>
 #include <cstdint>
 
-#include <dragonfly_msgs/msgs.h>
+#include <dragonfly_msgs/dragonfly_msgs.h>
 
 #include <iostream>
 #include <variant>
@@ -74,7 +75,7 @@ namespace dragonfly_datagram_protocol
     static constexpr uint32_t SHORT_DATAGRAM_OVERHEAD = 3;
     static constexpr uint32_t SHORT_DATAGRAM_PACKET_SIZE = SHORT_DATAGRAM_MAX_SIZE + SHORT_DATAGRAM_OVERHEAD;
 
-    static constexpr uint32_t LONG_DATAGRAM_MAX_SIZE = dragonfly_msgs::MAX_MSG_SIZE;
+    static constexpr uint32_t LONG_DATAGRAM_MAX_SIZE = std::max(dragonfly_msgs::MAX_MSG_SIZE, uint32_t(31));
     static constexpr uint32_t LONG_DATAGRAM_OVERHEAD = 6;
     static constexpr uint32_t LONG_DATAGRAM_PACKET_SIZE = LONG_DATAGRAM_MAX_SIZE + LONG_DATAGRAM_OVERHEAD;
 
@@ -203,6 +204,9 @@ namespace dragonfly_datagram_protocol
     {
     public:
 
+        Deserialiser(Event* corrupted_data_error) : 
+            _corrupted_data_error(corrupted_data_error) {}
+
         std::optional<Packet> feed(uint8_t byte)
         {
             _buffer.pushBack(byte);
@@ -231,7 +235,7 @@ namespace dragonfly_datagram_protocol
                 }
             }
 
-            if((_buffer[0] & 0b11110000) == PONG_MAGIC)
+            else if((_buffer[0] & 0b11110000) == PONG_MAGIC)
             {
                 // Check we have enough data
                 if(_buffer.size() < PONG_PACKET_SIZE) 
@@ -278,6 +282,7 @@ namespace dragonfly_datagram_protocol
                     DatagramPacket res;
                     res.src = (PeerId)((_buffer[1] >> 2) & 0b00000011);
                     res.dst = (PeerId)(_buffer[1] & 0b00000011);
+                    res.data.size = datagram_size;
                     _buffer.copy(res.data.data.data(), 2, datagram_size);
                     _buffer.popFront(packet_size);
                     return res;
@@ -321,12 +326,13 @@ namespace dragonfly_datagram_protocol
                             _buffer.popFront(packet_size);
                             return res;
                         }
-                    }                    
+                    }                 
                 }
             }
 
             // We only arrive down here if invalid data was found, in that case, we flush the front 
             // byte of the buffer and go to the next magic number
+            _corrupted_data_error->trigger();
             _buffer.popFront(1);
             while(  _buffer.size() > 0 && 
                     (_buffer[0] & 0b11111100) != PING_MAGIC && 
@@ -412,8 +418,7 @@ namespace dragonfly_datagram_protocol
             uint32_t _size = 0;
         };
 
-        
-
+        Event* _corrupted_data_error;
         CircularBuffer _buffer;
     };
 }

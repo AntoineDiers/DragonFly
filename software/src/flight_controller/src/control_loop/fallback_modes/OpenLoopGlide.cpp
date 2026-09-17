@@ -3,9 +3,9 @@
 
 using namespace config::flight_controller::control_loop::fallback_modes::open_loop_glide;
 
-dragonfly_msgs::msg::ActuatorCommands fallback_modes::open_loop_glide::tick()
+ActuatorCommands fallback_modes::open_loop_glide::tick()
 {
-    dragonfly_msgs::msg::ActuatorCommands res;
+    ActuatorCommands res;
     res.throttle_percent = THROTTLE_PERCENT;
     res.flaps_deg = FLAPS_DEG;
     res.ailerons_deg = 0;

@@ -22,7 +22,7 @@ public:
         _boot_time = clock->getTime_us();
     }
 
-    void poll()
+    void tick()
     {
         if(!_rst_pin.getState() && _state != State::WAITING_FOR_COMMAND) 
         { 

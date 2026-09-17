@@ -47,7 +47,7 @@ namespace dragonfly_datagram_protocol
             }
         }
 
-        dragonfly_msgs::msg::link_stats::ConnectionStatus getConnectionStatus(uint64_t time_us)
+        dragonfly_msgs::msgs::comms::ConnectionStatus getConnectionStatus(uint64_t time_us)
         {    
             uint32_t total_latency_ms = 0;
             uint32_t n_pongs_received = 0;
@@ -89,19 +89,21 @@ namespace dragonfly_datagram_protocol
                 !last_acknowledged_ping_stamp || 
                 (time_us - last_acknowledged_ping_stamp.value()) / 1000 > CONNECTION_TIMEOUT_MS)
             {
-                dragonfly_msgs::msg::link_stats::ConnectionStatus res;
-                res.connected = false;
-                res.packet_loss_percent = 100;
-                res.ping_ms = 0;
-                return res;
+                return dragonfly_msgs::msgs::comms::ConnectionStatus
+                {
+                    .connected = false,
+                    .ping_ms = 0,
+                    .packet_loss_percent = 100,
+                };
             }
             else
             {   
-                dragonfly_msgs::msg::link_stats::ConnectionStatus res;
-                res.connected = true;
-                res.ping_ms = (n_pongs_received > 0) ? (total_latency_ms / n_pongs_received) : 0;
-                res.packet_loss_percent = n_pings_sent > 0 ? (100.0f * n_pings_lost / n_pings_sent) : 100;
-                return res;
+                return dragonfly_msgs::msgs::comms::ConnectionStatus
+                {
+                    .connected = true,
+                    .ping_ms = (n_pongs_received > 0) ? (total_latency_ms / n_pongs_received) : 0,
+                    .packet_loss_percent = n_pings_sent > 0 ? (100.0f * n_pings_lost / n_pings_sent) : 100
+                };
             }
         }
 
@@ -176,15 +178,15 @@ namespace dragonfly_datagram_protocol
             }
         }
 
-        dragonfly_msgs::msg::link_stats::ConnectionsStatus getConnectionsStatus()
+        dragonfly_msgs::msgs::comms::ConnectionsStatus getConnectionsStatus()
         {    
             uint64_t time_us = _clock->getTime_us();
-            return dragonfly_msgs::msg::link_stats::ConnectionsStatus
+            return dragonfly_msgs::msgs::comms::ConnectionsStatus
             {
                 .local_peer_via_local_link = _local_peer_via_local_link_history.getConnectionStatus(time_us),
                 .direct_remote_peer_via_local_link = _direct_remote_peer_via_local_link_history.getConnectionStatus(time_us),
-                .indirect_remote_peer_via_local_link = _indirect_remote_peer_via_local_link_history.getConnectionStatus(time_us),
                 .direct_remote_peer_via_remote_link = _direct_remote_peer_via_remote_link_history.getConnectionStatus(time_us),
+                .indirect_remote_peer_via_local_link = _indirect_remote_peer_via_local_link_history.getConnectionStatus(time_us),
                 .indirect_remote_peer_via_remote_link = _indirect_remote_peer_via_remote_link_history.getConnectionStatus(time_us),
             };
         }

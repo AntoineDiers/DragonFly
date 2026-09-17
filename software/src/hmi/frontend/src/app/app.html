@@ -1,0 +1,41 @@
+<div class="video-container">
+
+    <!--video id="video1" class="video" controls></video-->
+
+     <img
+        class="video"
+        src="image.png"
+        alt=""
+    />
+        
+    
+    <div class="overlay">
+
+        <div class="altitude">
+            <altitude-indicator [fc_state_overview]="fc_state_overview"/>
+        </div>
+
+        <div class="dashboard">
+            <dashboard [fc_state_overview]="fc_state_overview"/>
+        </div>
+
+        <div class="attitude">
+            <attitude-indicator [fc_state_overview]="fc_state_overview"/> 
+        </div>
+
+        <div class="state">
+            <state-overlay [fc_state_overview]="fc_state_overview"/>
+        </div>
+
+        <div class="connection-overlay">
+            <connection-overlay [gc_connection_state]="gc_connection_state"/>
+        </div>
+    
+    </div>
+
+
+    <!--div id="map" class="map">
+    </div-->
+
+    
+</div>

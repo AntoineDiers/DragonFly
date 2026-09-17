@@ -8,6 +8,7 @@
 #include <hardware/irq.h>
 #include <hardware/gpio.h>
 #include <iostream>
+#include <optional>
 
 enum class UartId
 {
@@ -71,8 +72,8 @@ public:
         uint32_t baudrate;
         uint8_t gpio_rx;
         uint8_t gpio_tx;
-        uint8_t gpio_rts;
-        uint8_t gpio_cts;
+        std::optional<uint8_t> gpio_rts;
+        std::optional<uint8_t> gpio_cts;
     };
 
     UartImplementation(const Config& config) : 
@@ -101,14 +102,15 @@ public:
 
         gpio_set_function(_config.gpio_tx, GPIO_FUNC_UART);
         gpio_set_function(_config.gpio_rx, GPIO_FUNC_UART);
-        gpio_set_function(_config.gpio_cts, GPIO_FUNC_UART);
-        gpio_set_function(_config.gpio_rts, GPIO_FUNC_UART);
+
+        if(_config.gpio_cts) { gpio_set_function(_config.gpio_cts.value(), GPIO_FUNC_UART); }
+        if(_config.gpio_rts) { gpio_set_function(_config.gpio_rts.value(), GPIO_FUNC_UART); }
 
         uart_init(_uart, _config.baudrate);
 
         uart_set_format(_uart, 8, 1, UART_PARITY_NONE);
 
-        uart_set_hw_flow(_uart, true, true);
+        uart_set_hw_flow(_uart, _config.gpio_cts.has_value(), _config.gpio_rts.has_value());
         uart_set_fifo_enabled(_uart, true);
 
         irq_set_exclusive_handler(irq, irq_handler);

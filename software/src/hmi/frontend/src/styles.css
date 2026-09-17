@@ -1,0 +1,17 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+:root {
+  --overlay-background-color: rgba(0, 0, 0, 0.37);
+  --dark-gray-color: rgba(39, 39, 39, 0.363);
+  --text-color: rgb(224, 224, 224);
+  --green-color: rgb(35, 143, 35);
+  --orange-color: rgb(184, 97, 17);
+  --blue-color: rgb(55, 137, 212);
+  --red-color: rgb(156, 17, 17);
+}

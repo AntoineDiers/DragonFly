@@ -1,0 +1,85 @@
+
+
+
+.altitude-indicator {
+  color: var(--text-color);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  background-color: var(--overlay-background-color);
+}
+
+.altitude-ticks {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+}
+
+
+/* Une graduation */
+
+.altitude-tick {
+    position: absolute;
+    right: 0;
+
+    width: 100%;
+    height: 1px;
+}
+
+.altitude-tick span {
+    position: absolute;
+    right: 20px;
+
+    width: 40px;
+    text-align: right;
+
+    font-size: 10px;
+
+    transform: translateY(-4px);
+}
+
+.tick {
+    position: absolute;
+    right: 0;
+
+    width: 15px;
+    height: 1px;
+
+    background: var(--text-color);
+}
+
+.altitude-tick-major {
+    width: 30%;
+}
+
+.altitude-tick-minor {
+    width: 15%;
+}
+
+
+/* ================================= */
+/*      INDICATEUR ALTITUDE ACTUELLE */
+/* ================================= */
+
+.altitude-pointer {
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+}
+
+.altitude-value {
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.altitude-value p {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}

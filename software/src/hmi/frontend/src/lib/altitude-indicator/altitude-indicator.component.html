@@ -1,0 +1,27 @@
+
+  <!-- ========================= -->
+  <!--       ALTIMÈTRE           -->
+  <!-- ========================= -->
+
+<div class="altitude-indicator">
+
+    <div class="altitude-ticks">
+
+      <div class="altitude-tick" *ngFor="let alt of altitudeMarks()" [style.top.%]="altitudeMarkPosPercent(alt)">
+
+        <span *ngIf="alt % label_step === 0">{{ alt }}</span>
+        
+
+        <div
+          [class.altitude-tick-major]="alt % label_step === 0"
+          [class.altitude-tick-minor]="alt % label_step !== 0"
+          class="tick"
+        ></div>
+      </div>
+    </div>
+
+    <div class="altitude-pointer">
+      <span>◀</span>
+    </div>
+
+</div>

@@ -76,9 +76,9 @@ public:
         {
             std::optional<PendingReadingInfo> next_reading;
             if(_a0_read_timer && _a0_read_timer->poll()) { next_reading = { Pin::A0, _config.a0_config->sps, _clock->getTime_us() }; }
-            if(_a1_read_timer && _a1_read_timer->poll()) { next_reading = { Pin::A1, _config.a1_config->sps, _clock->getTime_us() }; }
-            if(_a2_read_timer && _a2_read_timer->poll()) { next_reading = { Pin::A2, _config.a2_config->sps, _clock->getTime_us() }; }
-            if(_a3_read_timer && _a3_read_timer->poll()) { next_reading = { Pin::A3, _config.a3_config->sps, _clock->getTime_us() }; }
+            else if(_a1_read_timer && _a1_read_timer->poll()) { next_reading = { Pin::A1, _config.a1_config->sps, _clock->getTime_us() }; }
+            else if(_a2_read_timer && _a2_read_timer->poll()) { next_reading = { Pin::A2, _config.a2_config->sps, _clock->getTime_us() }; }
+            else if(_a3_read_timer && _a3_read_timer->poll()) { next_reading = { Pin::A3, _config.a3_config->sps, _clock->getTime_us() }; }
             if(!next_reading) { return std::nullopt; }
 
             if(startReading(next_reading.value()))

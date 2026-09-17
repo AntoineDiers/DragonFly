@@ -4,7 +4,7 @@ enum ControlModes
 {
     IDLE = 0,
     MANUAL,
-    //AUTO, not implemented yet
+    AUTO// not implemented yet
 };
 
 enum FallbackModes

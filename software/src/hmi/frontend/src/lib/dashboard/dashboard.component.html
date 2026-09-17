@@ -1,0 +1,152 @@
+<div class="dashboard">
+
+  <svg
+    class="gauge"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 300 300"
+    preserveAspectRatio="xMidYMid meet"
+  >
+
+    <!-- ================================= -->
+    <!--          ARC THROTTLE              -->
+    <!-- ================================= -->
+
+    <!-- Fond de l'arc -->
+
+    <path
+      class="throttle-background"
+      d="M 72.22 227.78 A 110 110 0 1 1 227.78 227.78"
+    />
+
+    <!-- Progression -->
+
+    <path
+      class="throttle-progress"
+      d="M 72.22 227.78 A 110 110 0 1 1 227.78 227.78"
+      pathLength="100"
+      stroke-dasharray="100"
+      [attr.stroke-dashoffset]="100 - clampedThrottle"
+    />
+
+
+    <!-- ================================= -->
+    <!--             TICKS                 -->
+    <!-- ================================= -->
+
+    <g class="ticks">
+
+      <ng-container *ngFor="let percent of tickPercents">
+
+        <line
+          class="tick"
+          [class.major]="isMajorTick(percent)"
+          [attr.x1]="tickStart(percent).x"
+          [attr.y1]="tickStart(percent).y"
+          [attr.x2]="tickEnd(percent).x"
+          [attr.y2]="tickEnd(percent).y"
+        />
+
+      </ng-container>
+
+    </g>
+
+
+    <!-- ================================= -->
+    <!--       LABELS DE THROTTLE           -->
+    <!-- ================================= -->
+
+    <ng-container *ngFor="let percent of labelPercents">
+
+      <text
+        class="throttle-scale-label"
+        [attr.x]="labelPosition(percent).x"
+        [attr.y]="labelPosition(percent).y"
+        text-anchor="middle"
+        dominant-baseline="middle"
+      >
+        {{ percent }}
+      </text>
+
+    </ng-container>
+
+
+    <!-- ================================= -->
+    <!--             TITRE                  -->
+    <!-- ================================= -->
+
+    <text
+      class="throttle-title"
+      x="150"
+      y="25"
+      text-anchor="middle"
+    >
+      THROTTLE
+    </text>
+
+
+    <!-- ================================= -->
+    <!--             AIRSPEED               -->
+    <!-- ================================= -->
+
+    <text
+      class="airspeed-value"
+      x="150"
+      y="160"
+      text-anchor="middle"
+    >
+      {{ fc_state_overview.navigation.airspeed_km_h.toFixed(1) }}
+    </text>
+
+    <text
+      class="airspeed-unit"
+      x="150"
+      y="175"
+      text-anchor="middle"
+    >
+      km/h
+    </text>
+
+
+    <!-- ================================= -->
+    <!--             BATTERIE               -->
+    <!-- ================================= -->
+
+    <text
+      class="battery-label"
+      x="150"
+      y="210"
+      text-anchor="middle"
+    >
+      BATTERY
+    </text>
+
+    <rect
+      class="battery-background"
+      x="95"
+      y="215"
+      width="110"
+      height="10"
+      rx="5"
+    />
+
+    <rect
+      class="battery-level"
+      x="95"
+      y="215"
+      [attr.width]="110 * clampedBattery / 100"
+      height="10"
+      rx="5"
+    />
+
+    <text
+      class="battery-value"
+      x="150"
+      y="240"
+      text-anchor="middle"
+    >
+      {{ fc_state_overview.battery_level_percent.toFixed(0) }} %
+    </text>
+
+  </svg>
+
+</div>

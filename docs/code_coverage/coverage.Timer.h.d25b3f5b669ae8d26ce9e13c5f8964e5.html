@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2026-08-31 19:38:49</td>
+      <td>2026-09-17 13:11:37</td>
     </tr>
   </table>
 </div>
@@ -74,7 +74,7 @@
       <th>Block coverage</th>
     </tr>
     <tr><td><a href="#l9">Timer::Timer(ClockInterface*, unsigned int) (line 9)</a></td><td>called 7 times, returned 7 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l15">Timer::poll() (line 15)</a></td><td>called 35619 times, returned 35619 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l15">Timer::poll() (line 15)</a></td><td>called 37182 times, returned 37182 times</td><td>100.0%</td></tr>
   </table>
 </details>
 
@@ -191,7 +191,7 @@
       <td class="lineno"><a id="l15" href="#l15">15</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">35619</td>
+      <td class="linecount coveredLine">37182</td>
       <td class="src coveredLine"><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">poll</span><span class="p">()</span></td>
     </tr>
     <tr class="source-line">
@@ -205,14 +205,14 @@
       <td class="lineno"><a id="l17" href="#l17">17</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">35619</td>
+      <td class="linecount coveredLine">37182</td>
       <td class="src coveredLine"><span class="w">        </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_clock</span><span class="o">-&gt;</span><span class="n">getTime_us</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l18" href="#l18">18</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">35619</td>
+      <td class="linecount coveredLine">37182</td>
       <td class="src coveredLine"><span class="w">        </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">next_tick_us</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_start_us</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">_period_us</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">_next_tick_index</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -228,12 +228,12 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 0 taken 26816 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 8803 times.</div>
+          <div class="takenBranch">&check; Branch 0 taken 28475 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 8707 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">35619</td>
+      <td class="linecount coveredLine">37182</td>
       <td class="src coveredLine"><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">now</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">next_tick_us</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -247,7 +247,7 @@
       <td class="lineno"><a id="l22" href="#l22">22</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">8803</td>
+      <td class="linecount coveredLine">8707</td>
       <td class="src coveredLine"><span class="w">        </span><span class="n">_next_tick_index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">now</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">_start_us</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">_period_us</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -261,7 +261,7 @@
       <td class="lineno"><a id="l24" href="#l24">24</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">8803</td>
+      <td class="linecount coveredLine">8707</td>
       <td class="src coveredLine"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">

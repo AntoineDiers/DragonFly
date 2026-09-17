@@ -1,8 +1,8 @@
 #include "Idle.h"
 
-dragonfly_msgs::msg::ActuatorCommands control_modes::idle::tick()
+ActuatorCommands control_modes::idle::tick()
 {
-    dragonfly_msgs::msg::ActuatorCommands res;
+    ActuatorCommands res;
     res.throttle_percent = 0;
     res.flaps_deg = 0;
     res.ailerons_deg = 0;

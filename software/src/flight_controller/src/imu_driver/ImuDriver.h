@@ -7,6 +7,8 @@
 #include <rpi_pico_utils/gpio/InputGpioInterface.h>
 #include <rpi_pico_utils/gpio/OutputGpioInterface.h>
 
+#include <dragonfly_msgs/enums/DiagLevel.h>
+
 class ImuDriver
 {
 public:
@@ -51,7 +53,7 @@ public:
     static constexpr float Q_SCALE = 1.0f / 16384.0f;
     static constexpr float RAD_TO_DEG = 180.0f / M_PI;
 
-    void poll()
+    void tick()
     {
         uint64_t now = _clock->getTime_us();
 
@@ -119,6 +121,11 @@ public:
         }
     }
 
+    dragonfly_msgs::enums::DiagLevel getDiagLevel()
+    {
+        return _output->getState().is_ok ? dragonfly_msgs::enums::DiagLevel::OK : dragonfly_msgs::enums::DiagLevel::ERR;
+    }
+
 private:
 
     struct ShtpHeader
@@ -165,7 +172,9 @@ private:
         cmd[12] = (period_us >> 24) & 0xFF;
 
         uint32_t n_bytes_written;
-        return _i2c->write(cmd, sizeof(cmd), n_bytes_written) && n_bytes_written == sizeof(cmd);
+        bool res = _i2c->write(cmd, sizeof(cmd), n_bytes_written) && n_bytes_written == sizeof(cmd);
+        
+        return res; 
     }
 
     ShtpHeader parseShtpHeader(uint8_t* data)

@@ -2,8 +2,10 @@
 
 #include "ConnectionStatusHandler.h"
 #include "TxBuffer.h"
+#include "DataRateCounter.h"
 
 #include <rpi_pico_utils/io/IoInterface.h>
+#include <dragonfly_utils/Event.h>
 
 namespace dragonfly_datagram_protocol
 {
@@ -11,23 +13,29 @@ namespace dragonfly_datagram_protocol
     {
     public:
 
+        struct LinkEvents
+        {
+            TxBuffer::Events tx_buffer_events;
+            Event* rw_error;
+            Event* corrupted_rx_data;
+        };
+
+        struct Events
+        {
+            LinkEvents remote_link;
+            LinkEvents local_link;
+        };
+
         Multiplexer(
             ClockInterface* clock,
             IoInterface* remote_io,
             IoInterface* local_io,
-            PeerId peer_id):
+            PeerId peer_id,
+            Events events):
             _peer_id(peer_id),
             _clock(clock),
-            _remote_link 
-            {
-                remote_io,
-                TxBuffer(clock)
-            },
-            _local_link
-            {
-                local_io,
-                TxBuffer(clock)
-            },
+            _remote_link(clock, remote_io, events.remote_link),
+            _local_link(clock, local_io, events.local_link),
             _connections_status_handler(clock, peer_id) {}
 
         struct DatagramPair
@@ -55,7 +63,7 @@ namespace dragonfly_datagram_protocol
         template<typename T>
         void sendMessage(const T& msg, const PeerId& dst)
         {   
-            DatagramPacket datagram;
+            DatagramPacket datagram = DatagramPacket();
             datagram.src = _peer_id;
             datagram.dst = dst;
             msg._serialise(datagram.data);
@@ -67,9 +75,20 @@ namespace dragonfly_datagram_protocol
             }
         };
 
-        dragonfly_msgs::msg::link_stats::ConnectionsStatus getConnectionsStatus()
+        dragonfly_msgs::msgs::comms::ConnectionsStatus getConnectionsStatus()
         {
             return _connections_status_handler.getConnectionsStatus();
+        }
+
+        dragonfly_msgs::msgs::comms::DataRates getDataRates()
+        {
+            return dragonfly_msgs::msgs::comms::DataRates
+            {
+                .local_link_rx_kbps =   _local_link.rx_counter.getDataRate_bytes_per_s() * 8 / 1000.0,
+                .local_link_tx_kbps =   _local_link.tx_counter.getDataRate_bytes_per_s() * 8 / 1000.0,
+                .remote_link_rx_kbps =  _remote_link.rx_counter.getDataRate_bytes_per_s() * 8 / 1000.0,
+                .remote_link_tx_kbps =  _remote_link.tx_counter.getDataRate_bytes_per_s() * 8 / 1000.0,
+            };
         }
 
     private:
@@ -79,16 +98,32 @@ namespace dragonfly_datagram_protocol
         struct Link
         {
             IoInterface* io;
+            Event* rw_error;
             TxBuffer tx_buffer;
+            DataRateCounter tx_counter;
+            DataRateCounter rx_counter;
+            Deserialiser deserialiser;
             Buffer<RX_BUFFER_SIZE> rx_buffer = Buffer<RX_BUFFER_SIZE>();
             PacketData pending_tx_packet = PacketData();
-            Deserialiser deserialiser = Deserialiser();
+            
+
+            Link(ClockInterface* clock, IoInterface* io, const LinkEvents& events) : 
+                io(io),
+                rw_error(events.rw_error),
+                tx_buffer(clock, events.tx_buffer_events),
+                tx_counter(clock),
+                rx_counter(clock),
+                deserialiser(events.corrupted_rx_data) {}
         };
-        
+
         std::optional<DatagramPacket> pollLink(const LinkId& link_id)
         {
             Link& link = link_id == LinkId::REMOTE ? _remote_link : _local_link;
             Link& other_link = link_id == LinkId::REMOTE ? _local_link : _remote_link;
+
+            // Update data rate counters
+            link.rx_counter.tick();
+            link.tx_counter.tick();
 
             // ------------------------------------------------
             // Transmit data from the tx buffer
@@ -102,11 +137,17 @@ namespace dragonfly_datagram_protocol
             if(link.pending_tx_packet.size > 0)
             {   
                 uint32_t n_bytes_sent;
-                if(link.io->write(link.pending_tx_packet.data.data(), link.pending_tx_packet.size, n_bytes_sent) && n_bytes_sent > 0)
+                bool write_ok = link.io->write(link.pending_tx_packet.data.data(), link.pending_tx_packet.size, n_bytes_sent);
+                if(write_ok && n_bytes_sent > 0)
                 {
+                    link.tx_counter.registerData(n_bytes_sent);
                     uint32_t remaining_size = link.pending_tx_packet.size - n_bytes_sent;
                     std::memmove(link.pending_tx_packet.data.data(), link.pending_tx_packet.data.data() + n_bytes_sent, remaining_size);
                     link.pending_tx_packet.size = remaining_size;
+                }
+                else if(!write_ok)
+                {
+                    link.rw_error->trigger();
                 }
             }
 
@@ -119,7 +160,12 @@ namespace dragonfly_datagram_protocol
                 uint32_t n_bytes_receveived;
                 if(link.io->read(link.rx_buffer.data.data(), RX_BUFFER_SIZE, n_bytes_receveived))
                 {
+                    link.rx_counter.registerData(n_bytes_receveived);
                     link.rx_buffer.size = n_bytes_receveived;
+                }
+                else
+                {
+                    link.rw_error->trigger();
                 }
             }
 

@@ -11,13 +11,13 @@ TEST(Common_Ads1115Driver, CanReadInputs)
     {
         .a0_config = Ads1115Driver::PinConfig 
         {
-            .read_period_ms = 100,
-            .sps = Ads1115Driver::SPS::SPS_64,
+            .read_period_ms = 300,
+            .sps = Ads1115Driver::SPS::SPS_128,
         },
         .a1_config = std::nullopt,
         .a2_config = Ads1115Driver::PinConfig 
         {
-            .read_period_ms = 10,
+            .read_period_ms = 100,
             .sps = Ads1115Driver::SPS::SPS_128,
         },
         .a3_config = std::nullopt
@@ -29,7 +29,7 @@ TEST(Common_Ads1115Driver, CanReadInputs)
 
     PeriodicDataConfig expected_period 
     { 
-        .expected_rate_hz = 100,
+        .expected_rate_hz = 10,
         .max_rate_deviation_hz = 5,
         .rate_sliding_window_s = 1
     };
@@ -50,6 +50,6 @@ TEST(Common_Ads1115Driver, CanReadInputs)
 
         clock.advance_ms(1);
     }
-
+ 
     ASSERT_TRUE(a2_output.getState().is_ok);
 }

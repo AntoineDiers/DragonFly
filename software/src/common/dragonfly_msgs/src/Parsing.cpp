@@ -1,15 +1,5 @@
 #include "Generation.h"
-
-static std::map<std::string, std::string> BASE_TYPES = 
-{
-    {"bool", "bool"},
-    {"f32", "float"},
-    {"f64", "double"},
-    {"u8",  "uint8_t"},
-    {"u16", "uint16_t"},
-    {"u32", "uint32_t"},
-    {"u64", "uint64_t"}
-};
+#include "Parsing.h"
 
 std::vector<std::string> split(const std::string& str)
 {
@@ -46,39 +36,17 @@ std::optional<MsgFieldDesc> parseMsgField(const std::string& line)
         return std::nullopt;
     }
 
-    MsgFieldDesc res;
-
     auto tokens = split(line);
-    res.name = tokens[1];
+    
 
     if (tokens.size() < 2)
         throw std::runtime_error("Invalid field declaration: " + line);
 
-    std::string type = tokens[0];
-
-    // Gestion d'un tableau : u8[10]
-    const size_t bracket = type.find('[');
-
-    if (bracket != std::string::npos)
+    return MsgFieldDesc
     {
-        const size_t closing = type.find(']', bracket);
-
-        if (closing == std::string::npos)
-            throw std::runtime_error("Missing closing bracket: " + type);
-
-        res.array_size = static_cast<uint32_t>(
-            std::stoul(type.substr(
-                bracket + 1,
-                closing - bracket - 1)));
-
-        type = type.substr(0, bracket);
-    }
-
-    auto it = BASE_TYPES.find(type);
-    res.is_base_type = it != BASE_TYPES.end();
-    res.type = res.is_base_type ? it->second : std::regex_replace(type, std::regex("/"), "::");
-    
-    return res;
+        .type = tokens[0],
+        .name = tokens[1]
+    };
 }
 
 MsgDesc parseMsgFile(const std::filesystem::path &filepath, const std::filesystem::path &root_path)
@@ -88,16 +56,16 @@ MsgDesc parseMsgFile(const std::filesystem::path &filepath, const std::filesyste
     MsgDesc res;
     
     // Find the header file path 
-    std::filesystem::path msg_files_root_path = root_path / "msg";
-    std::filesystem::path hdr_files_root_path = root_path / "include" / "msg";
+    std::filesystem::path msg_files_root_path = root_path / "msgs";
+    std::filesystem::path hdr_files_root_path = root_path / "include" / "msgs";
 
-    std::filesystem::path relative_path = std::filesystem::relative(filepath, root_path / "msg");
-    res.header_filepath = root_path / "include" / "dragonfly_msgs" / "msg" / relative_path;
+    std::filesystem::path relative_path = std::filesystem::relative(filepath, root_path / "msgs");
+    res.header_filepath = root_path / "include" / "dragonfly_msgs" / "msgs" / relative_path;
     res.header_filepath.replace_extension(".h");
 
     // Find the class name
     res.class_name = filepath.stem().string();
-    res.ns = {"dragonfly_msgs", "msg"};
+    res.ns = {"dragonfly_msgs", "msgs"};
     for(auto& folder : relative_path.parent_path())
     {
         res.ns.push_back(folder.filename().string());
@@ -108,6 +76,13 @@ MsgDesc parseMsgFile(const std::filesystem::path &filepath, const std::filesyste
     std::string line;
     while (std::getline(file, line)) 
     {
+        std::string include_str = "#include";
+        if(line.size() >= include_str.size() && line.substr(0, include_str.size()) == include_str)
+        {
+            res.includes.push_back(line);
+            continue;
+        }
+        
         std::optional<MsgFieldDesc> field = parseMsgField(line);
         if(field.has_value()) 
         {
@@ -122,11 +97,68 @@ std::vector<MsgDesc> parseMsgFiles(const std::filesystem::path &root_path)
 {
     std::vector<MsgDesc> res;
 
-    for (const auto& entry : std::filesystem::recursive_directory_iterator(root_path / "msg")) 
+    for (const auto& entry : std::filesystem::recursive_directory_iterator(root_path / "msgs")) 
     {
         if (entry.is_regular_file() && entry.path().extension() == ".msg")
         {
             res.push_back(parseMsgFile(entry.path(), root_path));
+        }
+    }
+
+    return res;
+
+}
+
+EnumDesc parseEnumFile(const std::filesystem::path &filepath, const std::filesystem::path &root_path)
+{
+    std::cout << "Parsing enum file : " << filepath.string() << " ...\n";
+
+    EnumDesc res;
+    
+    // Find the header file path 
+    std::filesystem::path msg_files_root_path = root_path / "enums";
+    std::filesystem::path hdr_files_root_path = root_path / "include" / "enums";
+
+    std::filesystem::path relative_path = std::filesystem::relative(filepath, root_path / "enums");
+    res.header_filepath = root_path / "include" / "dragonfly_msgs" / "enums" / relative_path;
+    res.header_filepath.replace_extension(".h");
+
+    // Find the enum name
+    res.enum_name = filepath.stem().string();
+    res.ns = {"dragonfly_msgs", "enums"};
+    for(auto& folder : relative_path.parent_path())
+    {
+        res.ns.push_back(folder.filename().string());
+    }
+
+    // Parse values
+    std::ifstream file(filepath);
+    std::string line;
+    while (std::getline(file, line)) 
+    {
+        std::vector<std::string> split_line = split(line);
+        if(split_line.size() > 0)
+        {
+            std::string value = split_line[0];
+            if(value[0] != '#')
+            {
+                res.values.push_back(value);
+            }
+        }
+    }
+
+    return res;
+}
+
+std::vector<EnumDesc> parseEnumFiles(const std::filesystem::path &root_path)
+{
+    std::vector<EnumDesc> res;
+
+    for (const auto& entry : std::filesystem::recursive_directory_iterator(root_path / "enums")) 
+    {
+        if (entry.is_regular_file() && entry.path().extension() == ".enum")
+        {
+            res.push_back(parseEnumFile(entry.path(), root_path));
         }
     }
 

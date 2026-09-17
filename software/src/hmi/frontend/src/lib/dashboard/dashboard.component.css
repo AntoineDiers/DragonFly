@@ -1,0 +1,132 @@
+.dashboard {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.gauge {
+  width: 100%;
+  height: 100%;
+
+  max-width: 400px;
+  max-height: 400px;
+
+  overflow: visible;
+}
+
+
+/* ================================= */
+/*          ARC THROTTLE              */
+/* ================================= */
+
+.throttle-background {
+  fill: none;
+
+  stroke: var(--dark-gray-color);
+  stroke-width: 12;
+
+  stroke-linecap: round;
+}
+
+
+.throttle-progress {
+  fill: none;
+
+  stroke: var(--green-color);
+  stroke-width: 12;
+
+  stroke-linecap: round;
+
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+
+/* ================================= */
+/*             TICKS                  */
+/* ================================= */
+
+.tick {
+  stroke: var(--text-color);
+  stroke-width: 1;
+}
+
+
+.tick.major {
+  stroke-width: 2.5;
+}
+
+
+/* ================================= */
+/*       LABELS THROTTLE              */
+/* ================================= */
+
+.throttle-scale-label {
+  fill: var(--text-color);
+
+  font-size: 12px;
+}
+
+
+.throttle-title {
+  fill: var(--text-color);
+
+  font-size: 9px;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* ================================= */
+/*            AIRSPEED                */
+/* ================================= */
+
+.airspeed-value {
+  fill: white;
+
+  font-size: 48px;
+  font-weight: 300;
+
+  font-family: Arial, sans-serif;
+}
+
+
+.airspeed-unit {
+  fill: var(--text-color);
+
+  font-size: 11px;
+}
+
+
+/* ================================= */
+/*             BATTERIE               */
+/* ================================= */
+
+.battery-label {
+  fill: var(--text-color);
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+}
+
+
+.battery-background {
+  fill: var(--dark-gray-color);
+}
+
+
+.battery-level {
+  fill: var(--green-color);
+}
+
+
+.battery-value {
+  fill: white;
+
+  font-size: 15px;
+  font-weight: bold;
+}

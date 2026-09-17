@@ -9,6 +9,6 @@ cmake ..
 make
 
 cd ..
-rm -rf ./include/dragonfly_msgs/msg
-mkdir ./include/dragonfly_msgs/msg
+rm -rf ./include/dragonfly_msgs/msgs
+rm -rf ./include/dragonfly_msgs/enums
 ./build/dragonfly_msgs_generator .

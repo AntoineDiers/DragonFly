@@ -1,0 +1,7 @@
+#include <dragonfly_msgs/msgs/comms/ConnectionStatus.h>
+
+ConnectionStatus local_peer_via_local_link
+ConnectionStatus direct_remote_peer_via_local_link
+ConnectionStatus direct_remote_peer_via_remote_link
+ConnectionStatus indirect_remote_peer_via_local_link
+ConnectionStatus indirect_remote_peer_via_remote_link

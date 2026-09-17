@@ -1,0 +1,41 @@
+
+  <!-- ========================= -->
+  <!--       ALTIMÈTRE           -->
+  <!-- ========================= -->
+
+<div class="state-overlay">
+
+    <div class="state">
+        <div class="state-box state-box-selected" *ngIf="fc_state_overview.control_mode == ControlModes.IDLE">IDLE</div>
+        <div class="state-box" *ngIf="fc_state_overview.control_mode != ControlModes.IDLE">IDLE</div>
+
+        <div class="state-box state-box-selected" *ngIf="fc_state_overview.control_mode == ControlModes.MANUAL">MANUAL</div>
+        <div class="state-box" *ngIf="fc_state_overview.control_mode != ControlModes.MANUAL">MANUAL</div>
+
+        <div class="state-box state-box-selected" *ngIf="fc_state_overview.control_mode == ControlModes.AUTO">AUTO</div>
+        <div class="state-box" *ngIf="fc_state_overview.control_mode != ControlModes.AUTO">AUTO</div>
+    </div>
+
+    <div class="horizontal-bar"></div>
+
+    <div class="inputs-state-row">
+
+        <div class="inputs-state-col">
+
+            <div class="input-state"> <div [ngClass]="getInputDiagClass(fc_state_overview.input_diags.remote_control)"></div> <span>REMOTE CONTROL</span> </div>
+            <div class="input-state"> <div [ngClass]="getInputDiagClass(fc_state_overview.input_diags.attitude)"></div> <span>ATTITUDE</span> </div>
+            <div class="input-state"> <div [ngClass]="getInputDiagClass(fc_state_overview.input_diags.battery_level)"></div> <span>BATTERY</span> </div>
+
+        </div>
+
+        <div class="inputs-state-col">
+
+            <div class="input-state"> <div [ngClass]="getInputDiagClass(fc_state_overview.input_diags.airspeed)"></div> <span>AIRSPEED</span> </div>
+            <div class="input-state"> <div [ngClass]="getInputDiagClass(fc_state_overview.input_diags.gps)"></div> <span>GPS</span> </div>
+            <div class="input-state"> <div [ngClass]="getInputDiagClass(fc_state_overview.input_diags.altitude)"></div> <span>ALTITUDE</span> </div>
+        </div>
+
+        
+    </div>
+
+</div>

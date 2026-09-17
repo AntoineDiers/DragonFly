@@ -1,0 +1,101 @@
+
+
+
+.state-overlay {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  gap: 10px;
+  align-items: center;
+  color: var(--text-color)
+}
+
+.state{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.state-box{
+  padding: 2px;
+  font-size: 12px;
+  width: 80px;
+  text-align: center;
+  background-color: var(--dark-gray-color);
+}
+
+.state-box-selected{
+  background-color: var(--green-color);
+}
+
+.vertical-bar{
+  background-color: var(--green-color);
+  width: 2px;
+  height: 100%;
+}
+
+.horizontal-bar{
+  background-color: var(--green-color);
+  width: 90%;
+  height: 1px;
+}
+
+.inputs-state-row{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.inputs-state-col{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input-state{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.input-unknown{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid var(--green-color);
+}
+
+.input-ok{
+  width: 10px;
+  height: 10px;
+  background-color: var(--green-color);
+  border-radius: 50%;
+  border: 1px solid var(--green-color);
+}
+
+.input-warn{
+  width: 10px;
+  height: 10px;
+  background-color: var(--orange-color);
+  border-radius: 50%;
+  border: 1px solid var(--orange-color);
+}
+
+.input-err{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid var(--red-color);
+  animation: blink-red 500ms cubic-bezier(0.95, 0, 0.05, 1) infinite;
+}
+
+@keyframes blink-red {
+  0%, 100% {
+    background-color: var(--red-color);
+  }
+
+  50% {
+    background-color: var(--dark-gray-color);
+  }
+}

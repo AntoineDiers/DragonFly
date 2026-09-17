@@ -5,3 +5,5 @@ set(CMAKE_CXX_STANDARD 17)
 
 file(GLOB_RECURSE SOURCES src/*.cpp)
 add_executable(dragonfly_msgs_generator ${SOURCES})
+target_include_directories(dragonfly_msgs_generator PRIVATE
+    ../../../deps/json/include)

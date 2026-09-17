@@ -14,6 +14,9 @@ This repository contains all the software required to operate it as well as inst
 .. image:: images/dragonfly_4.png
    :width: 100% 
 
+.. image:: images/hmi.png
+   :width: 100%
+
 .. image:: images/dragonfly_1.png
    :width: 32% 
 
@@ -25,4 +28,4 @@ This repository contains all the software required to operate it as well as inst
 
 .. image:: images/remote_control.jpg
    :width: 100%
-   :align: center
+

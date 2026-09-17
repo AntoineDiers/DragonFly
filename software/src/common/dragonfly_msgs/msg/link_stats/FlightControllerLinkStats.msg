@@ -1,5 +1,0 @@
-link_stats/LinkStats payload_computer
-link_stats/LinkStats remote_control_via_rf
-link_stats/LinkStats remote_control_via_4g
-link_stats/LinkStats ground_station_via_rf
-link_stats/LinkStats ground_station_via_4g

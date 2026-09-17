@@ -16,7 +16,8 @@ target_include_directories(flight_controller PRIVATE
     ../common/dragonfly_msgs/include
     ../common/dragonfly_datagram_protocol/include
     ../common/dragonfly_utils/include
-    ../common/rpi_pico_utils/include)
+    ../common/rpi_pico_utils/include
+    ../../deps/json/include)
 
 target_compile_options(flight_controller PRIVATE
     -Wall

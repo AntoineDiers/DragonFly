@@ -1,0 +1,109 @@
+.connection-overlay {
+  display: flex;
+  flex-direction: row;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--text-color);
+  gap : 10px;
+}
+
+.vertical-bar{
+  background-color: var(--text-color);
+  width: 2px;
+  height: 50px;
+  filter: opacity(0.3);
+}
+
+.peer {
+  display: flex;
+  flex-direction: column;
+  gap : 10px;
+  align-items: center;
+}
+
+.peer span{
+  font-size: 10px;
+  text-align: center;
+  height: 10px;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.link-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.link-stats span {
+  text-align: left;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+.icon-4g {
+  mask-image: url('/icons/4g.svg');
+  -webkit-mask-image: url('/icons/4g.svg');
+}
+
+.icon-rf {
+  mask-image: url('/icons/rf.svg');
+  -webkit-mask-image: url('/icons/rf.svg');
+}
+
+.icon-usb {
+  mask-image: url('/icons/usb.svg');
+  -webkit-mask-image: url('/icons/usb.svg');
+}
+
+.diag-ok
+{
+    background-color: var(--green-color);
+}
+
+.diag-warn
+{
+    background-color: var(--orange-color);
+}
+
+.diag-err
+{
+    background-color: var(--red-color);
+    animation: blink-red 500ms cubic-bezier(0.95, 0, 0.05, 1) infinite;
+}
+
+.diag-unknown
+{
+    background-color: var(--text-color);
+}
+
+@keyframes blink-red {
+  0%, 100% {
+    background-color: var(--red-color);
+  }
+
+  50% {
+    background-color: var(--dark-gray-color);
+  }
+}

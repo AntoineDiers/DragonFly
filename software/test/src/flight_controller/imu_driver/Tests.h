@@ -34,8 +34,8 @@ TEST(FlightController_ImuDriver, CanReadImuData)
 
     while(clock.getTime_us() < 10000000)
     {
-        imu_mock.poll();
-        imu_driver.poll();
+        imu_mock.tick();
+        imu_driver.tick();
         clock.advance_ms(1);
     }
 
@@ -77,8 +77,8 @@ TEST(FlightController_ImuDriver, CanResetOnTimeout)
 
     while(clock.getTime_us() < 10000000)
     {
-        imu_mock.poll();
-        imu_driver.poll();
+        imu_mock.tick();
+        imu_driver.tick();
         clock.advance_ms(1);
     }
 
@@ -91,8 +91,8 @@ TEST(FlightController_ImuDriver, CanResetOnTimeout)
 
     while(clock.getTime_us() < 11000000)
     {
-        imu_mock.poll();
-        imu_driver.poll();
+        imu_mock.tick();
+        imu_driver.tick();
         clock.advance_ms(1);
     }
 
@@ -103,8 +103,8 @@ TEST(FlightController_ImuDriver, CanResetOnTimeout)
 
     while(clock.getTime_us() < 20000000)
     {
-        imu_mock.poll();
-        imu_driver.poll();
+        imu_mock.tick();
+        imu_driver.tick();
         clock.advance_ms(1);
     }
 

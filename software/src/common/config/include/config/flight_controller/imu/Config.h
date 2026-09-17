@@ -9,7 +9,7 @@
 
 namespace config::flight_controller::imu
 {
-    static constexpr uint8_t I2C_SLAVE_ADDR = 0x48;
+    static constexpr uint8_t I2C_SLAVE_ADDR = 0x4A;
     static constexpr ImuDriver::Config IMU_DRIVER 
     {
         .reset_signal_duration_ms = 10,

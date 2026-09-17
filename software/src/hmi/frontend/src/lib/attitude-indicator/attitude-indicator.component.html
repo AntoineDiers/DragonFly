@@ -1,0 +1,219 @@
+
+  <!-- ========================= -->
+  <!--       HORIZON ARTIFICIEL   -->
+  <!-- ========================= -->
+
+  <div class="attitude-indicator">
+
+    <svg
+      [attr.viewBox]="'0 0 ' + size + ' ' + size"
+      [attr.width]="size"
+      [attr.height]="size"
+    >
+
+      <!-- ===================== -->
+      <!-- CIEL + SOL             -->
+      <!-- ===================== -->
+
+      <g [attr.transform]="horizonTransform">
+
+        <!-- Ciel -->
+        <rect
+          x="0"
+          y="0"
+          [attr.width]=1000
+          [attr.height]=1000
+          class="sky"
+        />
+
+        <!-- Sol -->
+        <rect
+          x="0"
+          [attr.y]="center"
+          [attr.width]="size"
+          [attr.height]="size"
+          class="ground"
+        />
+
+        <!-- Horizon -->
+        <line
+          x1="0"
+          [attr.y1]="center"
+          [attr.x2]="size"
+          [attr.y2]="center"
+          class="horizon"
+        />
+
+        <!-- ===================== -->
+        <!-- GRADUATIONS DE PITCH   -->
+        <!-- ===================== -->
+
+        @for (pitchValue of pitchMarks; track pitchValue) {
+
+          @if (pitchValue !== 0) {
+
+            <g
+              [attr.transform]="
+                'translate(0 ' +
+                (center - pitchValue * pitchScale) +
+                ')'
+              "
+            >
+
+              <line
+                [attr.x1]="size * 0.30"
+                [attr.x2]="size * 0.43"
+                y1="0"
+                y2="0"
+                class="pitch-mark"
+              />
+
+              <line
+                [attr.x1]="size * 0.57"
+                [attr.x2]="size * 0.70"
+                y1="0"
+                y2="0"
+                class="pitch-mark"
+              />
+
+              <text
+                [attr.x]="size * 0.27"
+                y="0"
+                class="pitch-label"
+              >
+                {{ Math.abs(pitchValue) }}
+              </text>
+
+              <text
+                [attr.x]="size * 0.73"
+                y="0"
+                class="pitch-label"
+              >
+                {{ Math.abs(pitchValue) }}
+              </text>
+
+            </g>
+          }
+        }
+
+      </g>
+
+      <!-- ===================== -->
+      <!-- ÉCHELLE DE ROULIS      -->
+      <!-- ===================== -->
+
+      <g class="roll-scale" [attr.transform]="'rotate(' + (-fc_state_overview.navigation.roll_deg) + ' ' + center + ' ' + center + ')'">
+
+        @for (angle of rollMarks; track angle) {
+
+          <g
+            [attr.transform]="
+              'rotate(' +
+              angle +
+              ' ' +
+              center +
+              ' ' +
+              center +
+              ')'
+            "
+          >
+
+            <line
+              [attr.x1]="center"
+              [attr.y1]="size * 0.015"
+              [attr.x2]="center"
+              [attr.y2]="rollMarkLength(angle)"
+              class="roll-mark"
+            />
+
+            @if (angle % 30 === 0 && angle !== 0) {
+
+              <text
+                [attr.x]="center"
+                [attr.y]="size * 0.115"
+                [style.font-size.px]="rollLabelFontSize"
+                class="roll-label"
+              >
+                {{ Math.abs(angle) }}
+              </text>
+
+            }
+
+          </g>
+        }
+
+        
+
+      </g>
+
+      <!-- Index de roulis -->
+        <polygon
+          [attr.points]="
+            center + ',' + size * 0.015 + ' ' +
+            (center - size * 0.025) + ',' + size * 0.055 + ' ' +
+            (center + size * 0.025) + ',' + size * 0.055
+          "
+          class="roll-pointer"
+        />
+
+      <!-- ===================== -->
+      <!-- SYMBOLE AVION          -->
+      <!-- ===================== -->
+
+      <g class="aircraft-symbol">
+
+        <line
+          [attr.x1]="center - size * 0.25"
+          [attr.x2]="center - size * 0.07"
+          [attr.y1]="center"
+          [attr.y2]="center"
+          class="aircraft-line"
+        />
+
+        <line
+          [attr.x1]="center + size * 0.07"
+          [attr.x2]="center + size * 0.25"
+          [attr.y1]="center"
+          [attr.y2]="center"
+          class="aircraft-line"
+        />
+
+        <line
+          [attr.x1]="center"
+          [attr.x2]="center + size * 0.08"
+          [attr.y1]="center"
+          [attr.y2]="center - size * 0.08"
+          class="aircraft-line"
+        />
+
+        <line
+          [attr.x1]="center"
+          [attr.x2]="center - size * 0.08"
+          [attr.y1]="center"
+          [attr.y2]="center - size * 0.08"
+          class="aircraft-line"
+        />
+
+        <circle
+          [attr.cx]="center"
+          [attr.cy]="center"
+          [attr.r]="size * 0.018"
+          class="aircraft-center"
+        />
+
+      </g>
+
+      <!-- ===================== -->
+      <!-- CONTOUR                -->
+      <!-- ===================== -->
+
+      <circle
+        [attr.cx]="center"
+        [attr.cy]="center"
+        [attr.r]="center - 1"
+        class="indicator-border"
+      />
+
+    </svg>
+
+  </div>

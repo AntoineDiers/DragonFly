@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
 
     std::filesystem::path root_path = argv[1];
 
-    generateHeaderFiles(parseMsgFiles(root_path), root_path);
+    generateHeaderFiles(parseMsgFiles(root_path), parseEnumFiles(root_path), root_path);
 
     return 0;
 }

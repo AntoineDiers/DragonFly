@@ -33,20 +33,20 @@ public:
         _inputs(inputs),
         _pids(clock) {}
         
-    dragonfly_msgs::msg::ActuatorCommands tick()
+    ActuatorCommands tick()
     {
         // Get inputs
         
         auto remote_control_inputs =    _inputs->remote_control.getLastValue(config::flight_controller::control_loop::REMOTE_CONTROL_TIMEOUT_MS);
         auto attitude =                 _inputs->primary_attitude.getLastValue(config::flight_controller::control_loop::ATTITUDE_TIMEOUT_MS);
         if(!attitude) { attitude =      _inputs->backup_attitude.getLastValue(config::flight_controller::control_loop::ATTITUDE_TIMEOUT_MS); }
-        auto altitude =                 _inputs->altitude.getLastValue(config::flight_controller::control_loop::ALTITUDE_TIMEOUT_MS);
+        auto altitude_m =                 _inputs->altitude_m.getLastValue(config::flight_controller::control_loop::ALTITUDE_TIMEOUT_MS);
         auto battery_level =            _inputs->battery_level.getLastValue(config::flight_controller::control_loop::BATTERY_LEVEL_TIMEOUT);
 
         // Update Nominal Control Mode according to remote control inputs
         if(remote_control_inputs)
         {
-            _state.nominal_control_mode = remote_control_inputs->is_armed ? 
+            _state.nominal_control_mode = remote_control_inputs->arm_enabled.get() ? 
                 ControlModes::MANUAL : 
                 ControlModes::IDLE;
         }
@@ -70,6 +70,10 @@ public:
                 }
                 break;
             }
+            case ControlModes::AUTO:
+            {
+                // Not implemented yet
+            }
         }
 
         // Activate a degraded control mode if a required input is missing
@@ -92,15 +96,15 @@ public:
         {
             if(attitude)
             {
-                if(altitude)
+                if(altitude_m)
                 {
-                    if(altitude.value() > config::flight_controller::control_loop::fallback_modes::SAFE_ALTITDE_LIMIT_M)
+                    if(altitude_m.value() > config::flight_controller::control_loop::fallback_modes::SAFE_ALTITDE_LIMIT_M)
                     {
                         if(battery_level && battery_level.value().level_percent > config::flight_controller::control_loop::fallback_modes::SAFE_BATTERY_LEVEL_PERCENT)
                         {
                             return fallback_modes::closed_loop_orbit::tick(
                                 attitude.value(), 
-                                altitude.value(), 
+                                altitude_m.value(), 
                                 _pids);
                         }
                         else
@@ -114,7 +118,7 @@ public:
                     {
                         return fallback_modes::closed_loop_landing::tick(
                             attitude.value(), 
-                            altitude.value(), 
+                            altitude_m.value(), 
                             _pids);
                     }
                 }
@@ -127,9 +131,9 @@ public:
             }
             else
             {
-                if(altitude)
+                if(altitude_m)
                 {
-                    if(altitude.value() > config::flight_controller::control_loop::fallback_modes::SAFE_ALTITDE_LIMIT_M)
+                    if(altitude_m.value() > config::flight_controller::control_loop::fallback_modes::SAFE_ALTITDE_LIMIT_M)
                     {
                         if(battery_level && battery_level.value().level_percent > config::flight_controller::control_loop::fallback_modes::SAFE_BATTERY_LEVEL_PERCENT)
                         {
@@ -142,7 +146,7 @@ public:
                     }
                     else
                     {
-                        return fallback_modes::open_loop_landing::tick(altitude.value());
+                        return fallback_modes::open_loop_landing::tick(altitude_m.value());
                     }
                 }
                 else

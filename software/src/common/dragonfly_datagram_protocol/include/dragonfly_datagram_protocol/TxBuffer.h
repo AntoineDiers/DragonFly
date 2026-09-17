@@ -2,6 +2,7 @@
 
 #include <rpi_pico_utils/clock/ClockInterface.h>
 #include <rpi_pico_utils/timer/Timer.h>
+#include <dragonfly_utils/Event.h>
 
 #include "Serialisation.h"
 
@@ -15,16 +16,20 @@ namespace dragonfly_datagram_protocol
     {
     public:
 
-        TxBuffer(ClockInterface* clock)
-            : _clock(clock) {}
+        struct Events
+        {
+            Event* unexpectedly_big_packet;
+            Event* data_discarded;
+        };
+
+        TxBuffer(ClockInterface* clock, const Events& events) :
+            _clock(clock),
+            _events(events) {}
 
         static_assert(BufferCapacityBytes > MAX_PACKET_SIZE);
         static_assert(BufferCapacityPackets > 0);
     
-        void pushDatagram(const DatagramPacket& datagram) 
-        { 
-            pushPacketData(serialiseDatagram(datagram)); 
-        }
+        void pushDatagram(const DatagramPacket& datagram) { pushPacketData(serialiseDatagram(datagram)); }
         void pushPing(const PingPacket& ping) { pushPacketData(serialisePing(ping)); }
         void pushPong(const PongPacket& pong) { pushPacketData(serialisePong(pong)); }
 
@@ -36,6 +41,7 @@ namespace dragonfly_datagram_protocol
                 uint64_t dt_ms = (_clock->getTime_us() - packet_info.stamp) / 1000;
                 if(dt_ms > MaxPacketAgeMs)
                 {
+                    _events.data_discarded->trigger();
                     popFirstPacket();
                 }
 
@@ -56,12 +62,18 @@ namespace dragonfly_datagram_protocol
         {
             if(_n_packets == BufferCapacityPackets)
             {
+                _events.data_discarded->trigger();
                 popFirstPacket();
             }
 
             while(_buffer.size + packet.size > BufferCapacityBytes)
             {
-                if(_n_packets == 0) { return; }
+                if(_n_packets == 0) 
+                {
+                    _events.unexpectedly_big_packet->trigger(); 
+                    return; 
+                }
+                _events.data_discarded->trigger();
                 popFirstPacket();
             }
 
@@ -96,6 +108,7 @@ namespace dragonfly_datagram_protocol
         };
 
         ClockInterface* _clock;
+        Events _events;
 
         Buffer<BufferCapacityBytes> _buffer;
         std::array<PacketInfo, BufferCapacityPackets> _packets_info;

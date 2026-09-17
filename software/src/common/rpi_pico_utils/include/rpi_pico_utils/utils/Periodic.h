@@ -2,7 +2,7 @@
 
 #include "../clock/ClockInterface.h"
 #include "Stamped.h"
-#include <dragonfly_msgs/msg/PeriodicDataState.h>
+//#include <dragonfly_msgs/msg/PeriodicDataState.h>
 
 #include <optional>
 #include <cmath>
@@ -20,7 +20,7 @@ struct PeriodicDataState
     float expected_rate_hz;
     float actual_rate_hz;
 
-    dragonfly_msgs::msg::PeriodicDataState toMsg()
+    /*dragonfly_msgs::msg::PeriodicDataState toMsg()
     {
         return dragonfly_msgs::msg::PeriodicDataState 
         {
@@ -40,7 +40,7 @@ struct PeriodicDataState
             .expected_rate_hz = msg.expected_rate_integer_part_hz + msg.expected_rate_decimal_part_hz / 255.0f,
             .actual_rate_hz = msg.actual_rate_integer_part_hz + msg.actual_rate_decimal_part_hz / 255.0f,
         };
-    }
+    }*/
 };
 
 template<typename T>

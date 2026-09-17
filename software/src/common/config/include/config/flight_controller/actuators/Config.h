@@ -39,18 +39,18 @@ namespace config::flight_controller::actuators
         .max_pulse_width_ticks = 2000
     };
 
-    static constexpr PwmImplementation::Config ELEVATOR_PWM = 
+    static constexpr PwmImplementation::Config LEFT_RUDDERVATOR_PWM = 
     {
-        .gpio = gpio::ELEVATOR_PWM,
+        .gpio = gpio::LEFT_RUDDERVATOR_PWM,
         .frequency_hz = 50,
         .tick_frequency_hz = 1000000,
         .min_pulse_width_ticks = 1000,
         .max_pulse_width_ticks = 2000
     };
 
-    static constexpr PwmImplementation::Config RUDDER_PWM = 
+    static constexpr PwmImplementation::Config RIGHT_RUDDERVATOR_PWM = 
     {
-        .gpio = gpio::RUDDER_PWM,
+        .gpio = gpio::RIGHT_RUDDERVATOR_PWM,
         .frequency_hz = 50,
         .tick_frequency_hz = 1000000,
         .min_pulse_width_ticks = 1000,

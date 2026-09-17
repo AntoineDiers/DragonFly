@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2026-08-31 19:38:49</td>
+      <td>2026-09-17 13:11:37</td>
     </tr>
   </table>
 </div>
@@ -73,7 +73,7 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l10">control_modes::manual::tick(dragonfly_msgs::msg::remote_control::Inputs const&amp;, FlightControllerInputs::Attitude const&amp;, Pids&amp;) (line 10)</a></td><td>not called</td><td>0.0%</td></tr>
+    <tr><td><a href="#l10">control_modes::manual::tick(dragonfly_msgs::msgs::remote_control::Inputs const&amp;, FlightControllerInputs::Attitude const&amp;, Pids&amp;) (line 10)</a></td><td>not called</td><td>0.0%</td></tr>
   </table>
 </details>
 
@@ -121,7 +121,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;../Utils.h&quot;</span></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;../ActuatorCommands.h&quot;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l6" href="#l6">6</a></td>
@@ -156,14 +156,14 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="n">dragonfly_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">ActuatorCommands</span><span class="w"> </span><span class="nf">control_modes::manual::tick</span><span class="p">(</span></td>
+      <td class="src uncoveredLine"><span class="n">ActuatorCommands</span><span class="w"> </span><span class="nf">control_modes::manual::tick</span><span class="p">(</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l11" href="#l11">11</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">dragonfly_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">remote_control</span><span class="o">::</span><span class="n">Inputs</span><span class="o">&amp;</span><span class="w"> </span><span class="n">remote_control_inputs</span><span class="p">,</span><span class="w"> </span></td>
+      <td class="src "><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">dragonfly_msgs</span><span class="o">::</span><span class="n">msgs</span><span class="o">::</span><span class="n">remote_control</span><span class="o">::</span><span class="n">Inputs</span><span class="o">&amp;</span><span class="w"> </span><span class="n">remote_control_inputs</span><span class="p">,</span><span class="w"> </span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l12" href="#l12">12</a></td>
@@ -191,178 +191,171 @@
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">left_right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">centeredRcInputToFloat</span><span class="p">(</span><span class="n">remote_control_inputs</span><span class="p">.</span><span class="n">left_right</span><span class="p">);</span></td>
+      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">roll_setpoint_deg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">remote_control_inputs</span><span class="p">.</span><span class="n">left_right</span><span class="p">.</span><span class="n">get</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">MAX_ROLL_SETPOINT_DEG</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l16" href="#l16">16</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">down_up</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">centeredRcInputToFloat</span><span class="p">(</span><span class="n">remote_control_inputs</span><span class="p">.</span><span class="n">down_up</span><span class="p">);</span></td>
+      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">ailerons_setpoint_deg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">remote_control_inputs</span><span class="p">.</span><span class="n">left_right</span><span class="p">.</span><span class="n">get</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">MAX_AILERON_ANGLE_DEG</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l17" href="#l17">17</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">throttle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rcInputToFloat</span><span class="p">(</span><span class="n">remote_control_inputs</span><span class="p">.</span><span class="n">throttle</span><span class="p">);</span></td>
+      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">ailerons_cmd_deg</span><span class="w"> </span><span class="o">=</span><span class="w">    </span><span class="p">(</span><span class="n">remote_control_inputs</span><span class="p">.</span><span class="n">roll_stab_level_percent</span><span class="p">.</span><span class="n">get</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l18" href="#l18">18</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">flaps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rcInputToFloat</span><span class="p">(</span><span class="n">remote_control_inputs</span><span class="p">.</span><span class="n">flaps</span><span class="p">);</span></td>
+      <td class="src uncoveredLine"><span class="w">                                </span><span class="n">pids</span><span class="p">.</span><span class="n">roll</span><span class="p">.</span><span class="n">tick</span><span class="p">(</span><span class="n">roll_setpoint_deg</span><span class="p">,</span><span class="w"> </span><span class="n">attitude</span><span class="p">.</span><span class="n">roll_deg</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l19" href="#l19">19</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">                                </span><span class="p">(</span><span class="mf">1.0f</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">remote_control_inputs</span><span class="p">.</span><span class="n">roll_stab_level_percent</span><span class="p">.</span><span class="n">get</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l20" href="#l20">20</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">roll_setpoint_deg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">left_right</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">MAX_ROLL_SETPOINT_DEG</span><span class="p">;</span></td>
+      <td class="src uncoveredLine"><span class="w">                                </span><span class="n">ailerons_setpoint_deg</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l21" href="#l21">21</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">ailerons_setpoint_deg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">left_right</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">MAX_AILERON_ANGLE_DEG</span><span class="p">;</span></td>
+      <td class="linecount "></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l22" href="#l22">22</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">roll_stabilization_level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rcInputToFloat</span><span class="p">(</span><span class="n">remote_control_inputs</span><span class="p">.</span><span class="n">roll_stabilization_level</span><span class="p">);</span></td>
+      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">pitch_setpoint_deg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">remote_control_inputs</span><span class="p">.</span><span class="n">down_up</span><span class="p">.</span><span class="n">get</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">MAX_PITCH_SETPOINT_DEG</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l23" href="#l23">23</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">ailerons_cmd_deg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">roll_stabilization_level</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pids</span><span class="p">.</span><span class="n">roll</span><span class="p">.</span><span class="n">tick</span><span class="p">(</span><span class="n">roll_setpoint_deg</span><span class="p">,</span><span class="w"> </span><span class="n">attitude</span><span class="p">.</span><span class="n">roll_deg</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mf">1.0f</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">roll_stabilization_level</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ailerons_setpoint_deg</span><span class="p">;</span></td>
+      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">elevator_setpoint_deg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">remote_control_inputs</span><span class="p">.</span><span class="n">down_up</span><span class="p">.</span><span class="n">get</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">MAX_AILERON_ANGLE_DEG</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l24" href="#l24">24</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">elevator_cmd_deg</span><span class="w"> </span><span class="o">=</span><span class="w">    </span><span class="p">(</span><span class="n">remote_control_inputs</span><span class="p">.</span><span class="n">pitch_stab_level_percent</span><span class="p">.</span><span class="n">get</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l25" href="#l25">25</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">pitch_setpoint_deg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">down_up</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">MAX_PITCH_SETPOINT_DEG</span><span class="p">;</span></td>
+      <td class="src uncoveredLine"><span class="w">                                </span><span class="n">pids</span><span class="p">.</span><span class="n">pitch</span><span class="p">.</span><span class="n">tick</span><span class="p">(</span><span class="n">pitch_setpoint_deg</span><span class="p">,</span><span class="w"> </span><span class="n">attitude</span><span class="p">.</span><span class="n">pitch_deg</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l26" href="#l26">26</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">elevator_setpoint_deg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">down_up</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">MAX_AILERON_ANGLE_DEG</span><span class="p">;</span></td>
+      <td class="src uncoveredLine"><span class="w">                                </span><span class="p">(</span><span class="mf">1.0f</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">remote_control_inputs</span><span class="p">.</span><span class="n">pitch_stab_level_percent</span><span class="p">.</span><span class="n">get</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l27" href="#l27">27</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">pitch_stabilization_level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rcInputToFloat</span><span class="p">(</span><span class="n">remote_control_inputs</span><span class="p">.</span><span class="n">pitch_stabilization_level</span><span class="p">);</span></td>
+      <td class="src uncoveredLine"><span class="w">                                </span><span class="n">elevator_setpoint_deg</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l28" href="#l28">28</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">elevator_cmd_deg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pitch_stabilization_level</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pids</span><span class="p">.</span><span class="n">pitch</span><span class="p">.</span><span class="n">tick</span><span class="p">(</span><span class="n">pitch_setpoint_deg</span><span class="p">,</span><span class="w"> </span><span class="n">attitude</span><span class="p">.</span><span class="n">pitch_deg</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="mf">1.0f</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">pitch_stabilization_level</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">elevator_setpoint_deg</span><span class="p">;</span></td>
-    </tr>
-    <tr class="source-line">
-      <td class="lineno"><a id="l29" href="#l29">29</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
       <td class="src "></td>
     </tr>
     <tr class="source-line">
-      <td class="lineno"><a id="l30" href="#l30">30</a></td>
+      <td class="lineno"><a id="l29" href="#l29">29</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">rudder_cmd_deg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">remote_control_inputs</span><span class="p">.</span><span class="n">left_right</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">MAX_RUDDER_ANGLE_DEG</span><span class="p">;</span></td>
+      <td class="src uncoveredLine"><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">rudder_cmd_deg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">remote_control_inputs</span><span class="p">.</span><span class="n">left_right</span><span class="p">.</span><span class="n">get</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">MAX_RUDDER_ANGLE_DEG</span><span class="p">;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l30" href="#l30">30</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l31" href="#l31">31</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="w">    </span><span class="n">ActuatorCommands</span><span class="w"> </span><span class="n">res</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l32" href="#l32">32</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">    </span><span class="n">dragonfly_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">ActuatorCommands</span><span class="w"> </span><span class="n">res</span><span class="p">;</span></td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">    </span><span class="n">res</span><span class="p">.</span><span class="n">throttle_percent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">remote_control_inputs</span><span class="p">.</span><span class="n">throttle_percent</span><span class="p">.</span><span class="n">get</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l33" href="#l33">33</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="n">res</span><span class="p">.</span><span class="n">throttle_percent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">throttle</span><span class="p">;</span></td>
+      <td class="src uncoveredLine"><span class="w">    </span><span class="n">res</span><span class="p">.</span><span class="n">flaps_deg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">remote_control_inputs</span><span class="p">.</span><span class="n">flaps_deg</span><span class="p">.</span><span class="n">get</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l34" href="#l34">34</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="n">res</span><span class="p">.</span><span class="n">flaps_deg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flaps</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">config</span><span class="o">::</span><span class="n">flight_controller</span><span class="o">::</span><span class="n">actuators</span><span class="o">::</span><span class="n">limits</span><span class="o">::</span><span class="n">MAX_FLAP_ANGLE_DEG</span><span class="p">;</span></td>
+      <td class="src uncoveredLine"><span class="w">    </span><span class="n">res</span><span class="p">.</span><span class="n">ailerons_deg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ailerons_cmd_deg</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l35" href="#l35">35</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="n">res</span><span class="p">.</span><span class="n">ailerons_deg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ailerons_cmd_deg</span><span class="p">;</span></td>
+      <td class="src uncoveredLine"><span class="w">    </span><span class="n">res</span><span class="p">.</span><span class="n">elevator_deg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">elevator_cmd_deg</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l36" href="#l36">36</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="n">res</span><span class="p">.</span><span class="n">elevator_deg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">elevator_cmd_deg</span><span class="p">;</span></td>
+      <td class="src uncoveredLine"><span class="w">    </span><span class="n">res</span><span class="p">.</span><span class="n">rudder_deg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rudder_cmd_deg</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l37" href="#l37">37</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">    </span><span class="n">res</span><span class="p">.</span><span class="n">rudder_deg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rudder_cmd_deg</span><span class="p">;</span></td>
-    </tr>
-    <tr class="source-line">
-      <td class="lineno"><a id="l38" href="#l38">38</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount uncoveredLine">&cross;</td>
       <td class="src uncoveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
-      <td class="lineno"><a id="l39" href="#l39">39</a></td>
+      <td class="lineno"><a id="l38" href="#l38">38</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
       <td class="src "><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
-      <td class="lineno"><a id="l40" href="#l40">40</a></td>
+      <td class="lineno"><a id="l39" href="#l39">39</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>

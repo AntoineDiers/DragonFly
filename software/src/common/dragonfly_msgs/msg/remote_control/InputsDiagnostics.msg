@@ -1,3 +1,0 @@
-PeriodicDataState flaps_knob_state
-PeriodicDataState roll_stab_knob_state
-PeriodicDataState pitch_stab_knob_state
